@@ -9,17 +9,17 @@ const KpoServices = () => {
   return (
     <>
     <Helmet>
-        <title>KPO Services - Apeiro Research</title>
-        <meta name="description" content="Explore Apeiro Research's KPO services including data analytics, research, and more." />
-        <link rel="canonical" href="https://www.apeiroresearch.com/kpo-services" />
+        <title>KPO Services - Evron Research</title>
+        <meta name="description" content="Explore Evron Research's KPO services including data analytics, research, and more." />
+        <link rel="canonical" href="https://www.Evronresearch.com/kpo-services" />
         <script type="application/ld+json">
           {`
             {
               "@context": "https://schema.org",
               "@type": "WebPage",
-              "url": "https://www.apeiroresearch.com/kpo-services",
-              "name": "KPO Services - Apeiro Research",
-              "description": "Explore Apeiro Research's KPO services including data analytics, research, and more."
+              "url": "https://www.Evronresearch.com/kpo-services",
+              "name": "KPO Services - Evron Research",
+              "description": "Explore Evron Research's KPO services including data analytics, research, and more."
             }
           `}
         </script>

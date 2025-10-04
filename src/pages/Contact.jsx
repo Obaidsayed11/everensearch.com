@@ -46,7 +46,7 @@ export default function Contact() {
                   <FiMail className="mt-1 mr-3" size={20} />
                   <div>
                     <h3 className="font-bold">Email</h3>
-                    <p className="text-gray-600">info@apeiroresearch.com</p>
+                    <p className="text-gray-600">info@Evronresearch.com</p>
                   </div>
                 </div>
                 <div className="flex items-start">

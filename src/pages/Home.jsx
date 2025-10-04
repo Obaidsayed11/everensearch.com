@@ -62,7 +62,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
                 {
-                  quote: "Apeiro Research provided invaluable insights that transformed our business strategy.",
+                  quote: "Evron Research provided invaluable insights that transformed our business strategy.",
                   author: "Jane Smith, CEO of TechCorp"
                 },
                 {

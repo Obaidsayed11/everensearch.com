@@ -16,17 +16,17 @@ function ServiceDetail() {
   return (
     <>
 <Helmet>
-  <title>{`Service Detail - ${serviceId} - Apeiro Research`}</title>
-  <meta name="description" content={`Details of the ${serviceId} service offered by Apeiro Research.`} />
-  <link rel="canonical" href={`https://www.apeiroresearch.com/kpo-services/${serviceId}`} />
+  <title>{`Service Detail - ${serviceId} - Evron Research`}</title>
+  <meta name="description" content={`Details of the ${serviceId} service offered by Evron Research.`} />
+  <link rel="canonical" href={`https://www.Evronresearch.com/kpo-services/${serviceId}`} />
   <script type="application/ld+json">
     {`
       {
         "@context": "https://schema.org",
         "@type": "Service",
-        "url": "https://www.apeiroresearch.com/kpo-services/${serviceId}",
+        "url": "https://www.Evronresearch.com/kpo-services/${serviceId}",
         "name": "Service Detail - ${serviceId}",
-        "description": "Details of the ${serviceId} service offered by Apeiro Research."
+        "description": "Details of the ${serviceId} service offered by Evron Research."
       }
     `}
   </script>

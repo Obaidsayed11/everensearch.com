@@ -10,17 +10,17 @@ const CompanyOverView = () => {
   return (
     <>
     <Helmet>
-  <title>Company Overview - Apeiro Research</title>
-  <meta name="description" content="Learn more about Apeiro Research, our mission, vision, and the innovative research solutions we provide to empower businesses." />
-  <link rel="canonical" href="https://www.apeiroresearch.com/company-overview" />
+  <title>Company Overview - Evron Research</title>
+  <meta name="description" content="Learn more about Evron Research, our mission, vision, and the innovative research solutions we provide to empower businesses." />
+  <link rel="canonical" href="https://www.Evronresearch.com/company-overview" />
   <script type="application/ld+json">
     {`
       {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "url": "https://www.apeiroresearch.com/company-overview",
-        "name": "Apeiro Research",
-        "description": "Apeiro Research provides innovative data analytics and research solutions to empower businesses.",
+        "url": "https://www.Evronresearch.com/company-overview",
+        "name": "Evron Research",
+        "description": "Evron Research provides innovative data analytics and research solutions to empower businesses.",
       }
     `}
   </script>
@@ -86,7 +86,7 @@ function CompanyAccordion() {
     "Our mission is to deliver exceptional RPO and KPO services that empower businesses to unlock their full potential. By combining industry expertise, innovative solutions, and cutting-edge technology, we aim to streamline recruitment and knowledge processes, driving efficiency, scalability, and long-term success for our clients. We are committed to fostering strong partnerships, delivering personalized support, and continuously improving our services to exceed client expectations. Our goal is to be the trusted partner of choice, helping organizations build top-tier teams, make informed decisions, and achieve sustainable growth in a dynamic business landscape.";
 
   const visionContent =
-    "At Apeiro Research, we aim to reshape the future of talent acquisition and knowledge outsourcing. Our vision is to deliver transformative RPO and KPO solutions that foster innovation, empower organizations, and drive sustainable growth. By leveraging data, technology, and expertise, we seek to create limitless opportunities for our clients, positioning them for long-term success in a rapidly evolving global market. We aspire to set new standards in operational excellence, providing tailored strategies that align with business goals. Our commitment to continuous improvement and client-centric solutions ensures that we are a trusted partner in every step of their journey.";
+    "At Evron Research, we aim to reshape the future of talent acquisition and knowledge outsourcing. Our vision is to deliver transformative RPO and KPO solutions that foster innovation, empower organizations, and drive sustainable growth. By leveraging data, technology, and expertise, we seek to create limitless opportunities for our clients, positioning them for long-term success in a rapidly evolving global market. We aspire to set new standards in operational excellence, providing tailored strategies that align with business goals. Our commitment to continuous improvement and client-centric solutions ensures that we are a trusted partner in every step of their journey.";
 
   return (
     <div

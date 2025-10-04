@@ -33,8 +33,8 @@ const Contact = () => {
       const emailData = {
         apikey:
           "BF0425CAE3DDC0AEC81C07F503513D745223645D9EC1D051B91457401C2F3FEEC3569D8CCFE52B6C0990E9820620E9DD",
-        from: "aoun@apeiroresearch.com",
-        to: "aoun@apeiroresearch.com",
+        from: "aoun@Evronresearch.com",
+        to: "aoun@Evronresearch.com",
         subject: "New Form Submitted",
         bodyHtml: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -77,20 +77,20 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contact Us - Apeiro Research</title>
+        <title>Contact Us - Evron Research</title>
         <meta
           name="description"
-          content="Get in touch with Apeiro Research for your business research and data analytics needs."
+          content="Get in touch with Evron Research for your business research and data analytics needs."
         />
-        <link rel="canonical" href="https://www.apeiroresearch.com/contact" />
+        <link rel="canonical" href="https://www.Evronresearch.com/contact" />
         <script type="application/ld+json">
           {`
             {
               "@context": "https://schema.org",
               "@type": "WebPage",
-              "url": "https://www.apeiroresearch.com/contact",
-              "name": "Contact Us - Apeiro Research",
-              "description": "Get in touch with Apeiro Research for your business research and data analytics needs."
+              "url": "https://www.Evronresearch.com/contact",
+              "name": "Contact Us - Evron Research",
+              "description": "Get in touch with Evron Research for your business research and data analytics needs."
             }
           `}
         </script>
@@ -175,8 +175,8 @@ const Contact = () => {
                         <h3 className="font-semibold text-lg text-gray-500 mb-1">
                           Email
                         </h3>
-                        <p className="text-gray-500">aoun@apeiroresearch.com</p>
-                        <p className="text-gray-500">kaif@apeiroresearch.com</p>
+                        <p className="text-gray-500">aoun@Evronresearch.com</p>
+                        <p className="text-gray-500">kaif@Evronresearch.com</p>
                       </div>
                     </div>
                   </div>

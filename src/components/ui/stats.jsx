@@ -41,7 +41,7 @@ const StatCard = ({
         <div className = "flex flex-col items-start gap-5" >
         <div className = "relative" >
         <div className = "absolute -inset-1 bg-gradient-to-r from-slate-600/20 to-slate-800/20 blur opacity-100" > </div> <div className = "relative bg-white/80 p-2 rounded-xl" >
-        <Icon className = "w-6 h-6 text-slate-700"
+        <Icon className = "w-6 h-6 text-slate-700 " 
         strokeWidth = {
             1.5
         }
@@ -53,7 +53,7 @@ const StatCard = ({
         } >
         {
             formatValue(count, prefix)
-        } </p> <h3 className = "text-xs font-medium text-slate-500 uppercase tracking-wider" > {
+        } </p> <h3 className = "text-xs font-medium text-[#260433]  uppercase tracking-wider" > {
             title
         } </h3> </div> </div> </div> </div>
     );
@@ -67,14 +67,14 @@ function Stats() {
           <div className="flex items-center space-x-4 mb-2">
             <div className="h-10 w-1 bg-gradient-to-b from-slate-700 to-slate-900 rounded-full"></div>
             <div>
-              <h2 className="text-3xl font-bold text-slate-800 tracking-tight">
+              <h2 className="text-3xl font-bold text-[#13011A] tracking-tight">
                 Enterprise Metrics
               </h2>
             </div>
             <div className="ml-14">
               <div className="flex items-center space-x-3">
                 <div className="h-px w-8 bg-gradient-to-r from-slate-200 to-transparent"></div>
-                <p className="text-sm text-slate-500 font-medium">
+                <p className="text-sm text-purple-800 font-medium">
                   Real-time performance analytics
                 </p>
               </div>

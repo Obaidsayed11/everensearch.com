@@ -4,19 +4,19 @@ import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-200">
-      <div className="px-4 py-8 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-28">
+    <footer className="bg-[#260433] text-white">
+      <div className="px-4 py-8 sm:px-6 lg:px-8 text-white">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-28 text-white">
           {/* Logo and Description */}
           <div className="flex flex-col">
             <div className="text-teal-600">
-              {/* <img src={largeScreen} alt="Apeiro Logo" className="w-40" /> */}
+              {/* <img src={largeScreen} alt="Evron Logo" className="w-40" /> */}
             </div>
-            <p className="mt-4 text-left text-gray-700">
+            <p className="mt-4 text-left text-white">
               The Ultimate Destination Of Research.
             </p>
             {/* Social Icons */}
-            <ul className="mt-6 flex space-x-2">
+            <ul className="mt-6 flex space-x-2 text-white">
               <li>
                 <a
                   href=" https://wa.me/919082704714"
@@ -58,11 +58,11 @@ const Footer = () => {
 
               <li>
                 <a
-                  href="https://www.linkedin.com/company/apeiro-research-pvt-ltd/"
+                  href="https://www.linkedin.com/company/Evron-research-pvt-ltd/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <span className="sr-only">LinkedIn</span>
+                  <span className="sr-only text-white">LinkedIn</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="30"
@@ -82,7 +82,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://www.instagram.com/apeiro.research/?hl=en"
+                  href="https://www.instagram.com/Evron.research/?hl=en"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -196,14 +196,14 @@ const Footer = () => {
           {/* Services Section */}
           <div className="flex flex-col justify-start gap-6 sm:gap-4 sm:flex-row lg:justify-end sm:space-x-20">
             <div>
-              <p className="font-bold text-black border-b-2 border-blue-700 inline-block pb-1">
+              <p className="font-bold text-white border-b-2 border-fuchsia-700 inline-block pb-1">
                 Services
               </p>
               <ul className="mt-4 space-y-3 text-sm font-medium">
                 <li>
                   <NavLink
                     to="/kpo-services"
-                    className="text-black transition hover:underline"
+                    className="text-white transition hover:underline"
                   >
                     Kpo Services
                   </NavLink>
@@ -211,7 +211,7 @@ const Footer = () => {
                 <li>
                   <NavLink
                     to="/rpo-services"
-                    className="text-black transition hover:underline"
+                    className="text-white transition hover:underline"
                   >
                     Rpo Services
                   </NavLink>
@@ -219,7 +219,7 @@ const Footer = () => {
               </ul>
             </div>
             <div className="pr-6">
-              <p className="font-bold text-black border-b-2 border-blue-700 inline-block pb-1">
+              <p className="font-bold text-white border-b-2 border-fuchsia-700 inline-block pb-1">
                 Navigation
               </p>
 
@@ -227,7 +227,7 @@ const Footer = () => {
                 <li>
                   <NavLink
                     to="/about"
-                    className="text-black transition hover:underline"
+                    className="text-white transition hover:underline"
                   >
                     About
                   </NavLink>
@@ -235,7 +235,7 @@ const Footer = () => {
                 <li>
                   <NavLink
                     to="/why-us"
-                    className="text-black transition hover:underline"
+                    className="text-white transition hover:underline"
                   >
                     Why us
                   </NavLink>
@@ -243,7 +243,7 @@ const Footer = () => {
                 <li>
                   <NavLink
                     to="/company-overview"
-                    className="text-black transition hover:underline"
+                    className="text-white transition hover:underline"
                   >
                     Company Overview
                   </NavLink>
@@ -254,10 +254,10 @@ const Footer = () => {
         </div>
 
         {/* Footer Bottom */}
-        <p className="mt-8 text-center text-xs text-gray-700">
+        <p className="mt-8 text-center text-xs text-white">
           <span>
-            &copy; 2025. Apeiro Research. All rights reserved.{" "}
-            <NavLink to="/privacy-policy" className="text-blue-700 underline">
+            &copy; 2025. Evron Research. All rights reserved.{" "}
+            <NavLink to="/privacy-policy" className="text-fuchsia-700 underline">
               Privacy Policy
             </NavLink>
           </span>

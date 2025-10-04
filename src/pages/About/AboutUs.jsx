@@ -10,17 +10,17 @@ export default function AboutPage() {
   return (
     <>
       <Helmet>
-        <title>About Us - Apeiro Research</title>
-        <meta name="description" content="Learn more about Apeiro Research and how we help businesses grow with innovative research solutions." />
-        <link rel="canonical" href="https://www.apeiroresearch.com/about" />
+        <title>About Us - Evron Research</title>
+        <meta name="description" content="Learn more about Evron Research and how we help businesses grow with innovative research solutions." />
+        <link rel="canonical" href="https://www.Evronresearch.com/about" />
         <script type="application/ld+json">
           {`
             {
               "@context": "https://schema.org",
               "@type": "WebPage",
-              "url": "https://www.apeiroresearch.com/about",
-              "name": "About Us - Apeiro Research",
-              "description": "Learn more about Apeiro Research and how we help businesses grow with innovative research solutions."
+              "url": "https://www.Evronresearch.com/about",
+              "name": "About Us - Evron Research",
+              "description": "Learn more about Evron Research and how we help businesses grow with innovative research solutions."
             }
           `}
         </script>
@@ -42,7 +42,7 @@ function AboutUs() {
           About Us
         </p>
         <h1 className="font-bold text-xl md:text-4xl dark:text-white text-black">
-          Apeiro <span className="text-neutral-400">Research</span>
+          Evron <span className="text-neutral-400">Research</span>
         </h1>
         <p className="text-sm md:text-lg px-2 text-neutral-500 max-w-2xl mx-auto py-4">
           We provide global KPO and RPO services with a skilled team, driving
@@ -124,7 +124,7 @@ const OurTeam = () => {
       <div className="px-4 py-8 lg:px-16">
         <div className="bg-gray-50 p-6 md:p-10 rounded-xl">
           <div className="flex items-center gap-2 md:gap-3">
-            {/* <img src={smallScreen} width={30} alt="Apeiro research" /> */}
+            {/* <img src={smallScreen} width={30} alt="Evron research" /> */}
             <span className="text-xl md:text-2xl text-warning-500 font-semibold">
               |
             </span>
@@ -140,7 +140,7 @@ const OurTeam = () => {
                 Meet Our Team Of Experts
               </h2>
               <p className="text-gray-600 text-medium md:text-base mt-3">
-                Our team at Apeiro Research is a diverse group of skilled
+                Our team at Evron Research is a diverse group of skilled
                 professionals from around the world, united by a shared
                 commitment to excellence. Each member brings unique expertise in
                 KPO and RPO services, working together to deliver innovative

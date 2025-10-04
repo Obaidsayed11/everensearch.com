@@ -4,7 +4,7 @@ import React from "react";
 export const WhatWeDoHeader = () => {
   return (
     <div className="py-5 mt-5">
-      <span className="text-2xl md:text-3xl font-bold">What We Do?</span>
+      <span className="text-2xl md:text-3xl font-bold text-[#260433] ">What We Do?</span>
     </div>
   );
 };
@@ -12,7 +12,7 @@ export const WhatWeDoHeader = () => {
 export const AboutUsHeader = () => {
   return (
     <div className="flex items-center gap-2 md:gap-3">
-      {/* <img src={smallScreen} width={30} alt="Apeiro research" /> */}
+      {/* <img src={smallScreen} width={30} alt="Evron research" /> */}
       <span className="text-xl md:text-2xl text-warning-500 font-semibold">
         |
       </span>
@@ -24,7 +24,7 @@ export const AboutUsHeader = () => {
 export const WhyChooseHeader = () => {
   return (
     <div className="mb-16">
-      <h3 className="text-center text-3xl md:text-5xl font-semibold text-black leading-tight">
+      <h3 className="text-center text-3xl md:text-5xl font-semibold text-[#260433] leading-tight">
         Why Choose us
       </h3>
     </div>

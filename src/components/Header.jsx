@@ -100,7 +100,7 @@ const Header = () => {
         {/* Button */}
 
         <NavLink to="/contact"> 
-        <button className="text-sm px-3 py-1.5 hover:bg-blue-600  rounded-full bg-blue-600/80 text-white">Reach Out</button>
+        <button className="text-sm px-3 py-1.5 hover:bg-fuchsia-800  rounded-full bg-fuchsia-500 text-white">Reach Out</button>
 
         </NavLink>
       </div>

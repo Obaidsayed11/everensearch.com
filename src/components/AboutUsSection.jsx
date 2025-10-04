@@ -31,7 +31,7 @@ const AboutUsSection = () => {
 
   return (
     <div className="px-4 py-8 lg:px-16 overflow-x-hidden">
-      <div className="bg-gray-50 p-6 md:p-10 rounded-xl">
+      <div className="bg-purple-200 p-6 md:p-10 rounded-xl">
         <AboutUsHeader />
         <div className="flex flex-col lg:flex-row gap-8 mt-10 items-start lg:items-center">
           <div
@@ -43,7 +43,7 @@ const AboutUsSection = () => {
               Empowering Business Success with Tailored Solutions.
             </h2>
             <p className="text-gray-600 text-sm md:text-base mt-3">
-              At Apeiro Research, we empower businesses by offering a blend of
+              At Evron Research, we empower businesses by offering a blend of
               tailored solutions designed for success. With expertise in talent
               mapping, executive search, recruitment, and KPO services—including
               data management and B2B data—we provide the tools and insights
@@ -53,7 +53,7 @@ const AboutUsSection = () => {
               and shape a thriving future.
             </p>
             <div>
-              <button className="mt-5 tracking-wide flex items-center gap-2 px-5 py-3 rounded-full text-white bg-black/90 hover:bg-black/100 font-bold">
+              <button className="mt-5 tracking-wide flex items-center gap-2 px-5 py-3 rounded-full text-white bg-fuchsia-800 hover:bg-fuchsia-950 font-bold">
                 <NavLink to="/about">Know more</NavLink>
                 <ChevronRight className="h-5 w-5" />
               </button>

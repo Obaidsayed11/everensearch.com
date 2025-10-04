@@ -4,17 +4,17 @@ const PrivacyPolicy = () => {
   return (
     <>
     <Helmet>
-        <title>Privacy Policy - Apeiro Research</title>
-        <meta name="description" content="Read Apeiro Research's privacy policy to understand how we handle your data." />
-        <link rel="canonical" href="https://www.apeiroresearch.com/privacy-policy " />
+        <title>Privacy Policy - Evron Research</title>
+        <meta name="description" content="Read Evron Research's privacy policy to understand how we handle your data." />
+        <link rel="canonical" href="https://www.Evronresearch.com/privacy-policy " />
         <script type="application/ld+json">
           {`
             {
               "@context": "https://schema.org",
               "@type": "WebPage",
-              "url": "https://www.apeiroresearch.com/privacy-policy",
-              "name": "Privacy Policy - Apeiro Research",
-              "description": "Read Apeiro Research's privacy policy to understand how we handle your data."
+              "url": "https://www.Evronresearch.com/privacy-policy",
+              "name": "Privacy Policy - Evron Research",
+              "description": "Read Evron Research's privacy policy to understand how we handle your data."
             }
           `}
         </script>
@@ -26,7 +26,7 @@ const PrivacyPolicy = () => {
         </h1>
 
         <p className="text-gray-700 leading-relaxed mb-6">
-          At <span className="font-semibold">Apeiro Research</span>, we are
+          At <span className="font-semibold">Evron Research</span>, we are
           committed to protecting the privacy of our clients, partners, and
           visitors. This Privacy Policy outlines how we collect, use, disclose,
           and safeguard your information when you interact with our services. By
@@ -146,7 +146,7 @@ const PrivacyPolicy = () => {
                 href="mailto:your-email@example.com"
                 className="text-blue-600 hover:underline"
               >
-                aoun@apeiroresearch.com
+                aoun@Evronresearch.com
               </a>
             </p>
             <p>
@@ -161,23 +161,23 @@ const PrivacyPolicy = () => {
             Copyright Notice
           </h2>
           <p className="text-gray-700 leading-relaxed">
-            Copyright &copy; 2025 Apeiro Research. All Rights Reserved.
+            Copyright &copy; 2025 Evron Research. All Rights Reserved.
           </p>
           <p className="text-gray-700 leading-relaxed">
             All content, including but not limited to text, graphics, logos,
-            images, data, and software, available on Apeiro Research's website
-            and through its services is the intellectual property of Apeiro
+            images, data, and software, available on Evron Research's website
+            and through its services is the intellectual property of Evron
             Research unless otherwise specified.
           </p>
           <h2 className="text-xl font-semibold my-4">Usage of Content</h2>
         <p className="text-base text-gray-700 mb-4">
           No part of our content may be copied, reproduced, distributed, or transmitted in any form without prior written permission.
-          Use of our materials for personal, non-commercial purposes is permitted with proper attribution to Apeiro Research.
+          Use of our materials for personal, non-commercial purposes is permitted with proper attribution to Evron Research.
         </p>
 
         <h2 className="text-xl font-semibold mb-4">Trademarks</h2>
         <p className="text-base text-gray-700 mb-4">
-          Apeiro Research, its logo, and any product or service names associated with our company are trademarks of Apeiro Research.
+          Evron Research, its logo, and any product or service names associated with our company are trademarks of Evron Research.
           Unauthorized use of these trademarks is strictly prohibited.
         </p>
 
@@ -193,7 +193,7 @@ const PrivacyPolicy = () => {
 
         <h2 className="text-xl font-semibold mb-4">For permissions or further inquiries, contact:</h2>
         <p className="text-base text-gray-700">
-        aoun@apeiroresearch.com <br />
+        aoun@Evronresearch.com <br />
         85, Sector 1, Millenium Business Park,
 
 MIDC Industrial Area, Kopar Khairane, Navi Mumbai

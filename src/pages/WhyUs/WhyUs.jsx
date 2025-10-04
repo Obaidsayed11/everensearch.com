@@ -6,17 +6,17 @@ function WhyUs() {
   return (
     <>
     <Helmet>
-        <title>Why Choose Us - Apeiro Research</title>
-        <meta name="description" content="Learn why Apeiro Research is the best choice for your business research and data analytics needs." />
-        <link rel="canonical" href="https://www.apeiroresearch.com/why-us" />
+        <title>Why Choose Us - Evron Research</title>
+        <meta name="description" content="Learn why Evron Research is the best choice for your business research and data analytics needs." />
+        <link rel="canonical" href="https://www.Evronresearch.com/why-us" />
         <script type="application/ld+json">
           {`
             {
               "@context": "https://schema.org",
               "@type": "WebPage",
-              "url": "https://www.apeiroresearch.com/why-us",
-              "name": "Why Choose Us - Apeiro Research",
-              "description": "Learn why Apeiro Research is the best choice for your business research and data analytics needs."
+              "url": "https://www.Evronresearch.com/why-us",
+              "name": "Why Choose Us - Evron Research",
+              "description": "Learn why Evron Research is the best choice for your business research and data analytics needs."
             }
           `}
         </script>
@@ -31,7 +31,7 @@ function WhyUs() {
               Our Strategic Approach
             </h1>
             <p className="text-gray-600 leading-relaxed mb-6">
-              At Apeiro Research, our strategic approach is designed to deliver tailored, high-performance solutions that meet the unique needs of each client. We focus on blending industry-leading expertise, innovative methodologies, and cutting-edge technology to drive superior outcomes in RPO and KPO services. Our goal is to build long-term partnerships and help businesses scale, innovate, and thrive.
+              At Evron Research, our strategic approach is designed to deliver tailored, high-performance solutions that meet the unique needs of each client. We focus on blending industry-leading expertise, innovative methodologies, and cutting-edge technology to drive superior outcomes in RPO and KPO services. Our goal is to build long-term partnerships and help businesses scale, innovate, and thrive.
             </p>
             <div className="space-y-12">
               {/* Custom Pointers with Icons */}
@@ -103,7 +103,7 @@ function WhyUs() {
             </h2>
             <div className="prose max-w-none">
               <p className="text-gray-600 leading-relaxed mb-6">
-                At Apeiro Research, we redefine industry excellence by seamlessly blending innovation, expertise, and commitment to deliver unmatched RPO and KPO solutions. We focus on providing intelligent, adaptable, and high-quality services that help businesses navigate complexities and stay ahead in an ever-evolving marketplace. Our relentless pursuit of excellence ensures that we consistently exceed client expectations and drive transformative results.
+                At Evron Research, we redefine industry excellence by seamlessly blending innovation, expertise, and commitment to deliver unmatched RPO and KPO solutions. We focus on providing intelligent, adaptable, and high-quality services that help businesses navigate complexities and stay ahead in an ever-evolving marketplace. Our relentless pursuit of excellence ensures that we consistently exceed client expectations and drive transformative results.
               </p>
 
               <ul className="space-y-4 text-gray-600 pl-0">
@@ -131,7 +131,7 @@ function WhyUs() {
                   {
                     title: "A Legacy of Excellence",
                     description:
-                      "Apeiro Research is known for continuously setting the benchmark in RPO and KPO services, not just meeting but consistently exceeding industry standards.",
+                      "Evron Research is known for continuously setting the benchmark in RPO and KPO services, not just meeting but consistently exceeding industry standards.",
                   },
                 ].map((item, index) => (
                   <li className="flex items-center gap-3" key={index}>

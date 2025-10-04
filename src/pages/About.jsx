@@ -9,13 +9,13 @@ export default function About() {
       
       <main className="flex-grow py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold mb-8">About Apeiro Research</h1>
+          <h1 className="text-4xl font-bold mb-8">About Evron Research</h1>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <div>
               <h2 className="text-2xl font-bold mb-4">Our Mission</h2>
               <p className="text-gray-700 mb-6">
-                At Apeiro Research, we're dedicated to providing innovative research solutions that help businesses make data-driven decisions. Our team of experts combines cutting-edge methodologies with deep industry knowledge to deliver actionable insights.
+                At Evron Research, we're dedicated to providing innovative research solutions that help businesses make data-driven decisions. Our team of experts combines cutting-edge methodologies with deep industry knowledge to deliver actionable insights.
               </p>
               <p className="text-gray-700">
                 Founded in 2015, we've grown to become a trusted partner for companies across various industries, from startups to Fortune 500 enterprises.

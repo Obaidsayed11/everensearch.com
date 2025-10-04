@@ -30,7 +30,15 @@ export function WhatWeDoSection() {
     <div className="container relative mx-auto px-4 pb-1">
       <WhatWeDoHeader />
       <div className="flex w-full flex-col">
-        <Tabs aria-label="Options">
+        <Tabs 
+          aria-label="Options"
+          classNames={{
+            tabList: "gap-0 w-auto relative rounded-full p-1 bg-gray-100",
+            cursor: "w-full bg-white shadow-md rounded-full",
+            tab: "max-w-fit px-4 h-10 rounded-full",
+            tabContent: "group-data-[selected=true]:text-black text-gray-500 font-medium"
+          }}
+        >
           <Tab key="kpo-services" title="KPO-SERVICES">
             <div className="mt-8 mb-24 grid grid-cols-1 md:grid-cols-2 gap-6"  data-aos="fade-right" data-aos-duration="1500" data-aos-easing="ease-in-shine">
               {KPOSERVICES.map((service, index) => {
