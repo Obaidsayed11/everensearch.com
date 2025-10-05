@@ -50,12 +50,12 @@ function ServiceDetail() {
           <div className="content-section p-8 md:p-12">
             <div className="service-title flex items-center gap-2 mb-6">
               <ShieldCheck className="w-8 h-8 text-blue-600" />
-              <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
+              <h1 className="text-2xl md:text-3xl font-bold text-[#260433]">
                 {service.title}
               </h1>
             </div>
 
-            <p className="text-md md:text-lg text-gray-600 mb-8 leading-relaxed">
+            <p className="text-md md:text-lg text-black mb-8 leading-relaxed">
               {service.details}
             </p>
 
@@ -69,7 +69,7 @@ function ServiceDetail() {
             </div>
 
             <div className="call-to-action mt-10">
-              <button className="border border-zinc-100 px-4 bg-black/80 hover:bg-black text-white rounded-lg py-2 md:text-medium text-sm">
+              <button className="border border-zinc-100 px-4 bg-[#260433] hover:bg-fuchsia-950 text-white rounded-lg py-2 md:text-medium text-sm">
                 <NavLink to="/contact">Contact Us</NavLink>
               </button>
             </div>

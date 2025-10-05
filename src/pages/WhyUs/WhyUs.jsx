@@ -27,7 +27,7 @@ function WhyUs() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Left Section */}
           <div data-aos="fade-down" data-aos-duration="1300">
-            <h1 className="text-2xl font-semibold text-gray-900 mb-8">
+            <h1 className="text-2xl font-semibold text-[#260433] mb-8">
               Our Strategic Approach
             </h1>
             <p className="text-gray-600 leading-relaxed mb-6">
@@ -84,7 +84,7 @@ function WhyUs() {
                     className={`w-7 h-7 text-gray-400 flex-shrink-0 ${item.color}`}
                   />
                   <div>
-                    <h3 className="text-lg font-medium text-gray-900 mb-2">
+                    <h3 className="text-lg font-medium text-fuchsia-900 mb-2">
                       {item.title}
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
@@ -98,7 +98,7 @@ function WhyUs() {
 
           {/* Right Section */}
           <div data-aos="fade-up" data-aos-duration="1300">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-8">
+            <h2 className="text-2xl font-semibold text-[#260433] mb-8">
               Industry Excellence
             </h2>
             <div className="prose max-w-none">
@@ -136,7 +136,7 @@ function WhyUs() {
                 ].map((item, index) => (
                   <li className="flex items-center gap-3" key={index}>
                     <span>
-                      <b>{item.title}:</b> {item.description}
+                      <b className='text-fuchsia-950'>{item.title}:</b> {item.description}
                     </span>
                   </li>
                 ))}

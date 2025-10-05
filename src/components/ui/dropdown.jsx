@@ -56,7 +56,7 @@ const Dropdowns = ({
         button onClick = {
             toggleDropdown
         }
-        className = "cursor-pointer hover:bg-gray-100 px-4 py-2 rounded-3xl text-sm flex items-center"
+        className = "cursor-pointer hover:bg-gray-100 text-[#260433] hover:text-[#260433]  px-4 py-2 rounded-3xl text-sm flex items-center"
         aria-expanded = {
             isOpen
         } >

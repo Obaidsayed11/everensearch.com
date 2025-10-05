@@ -90,7 +90,7 @@ const Header = () => {
             <span>
             <NavLink
               to="/about"
-              className="cursor-pointer hover:bg-gray-100 px-4 py-2 rounded-3xl text-sm"
+              className="cursor-pointer text-[#260433] hover:text-[#260433]  hover:bg-gray-100 px-4 py-2 rounded-3xl text-sm"
             >
               About
             </NavLink>

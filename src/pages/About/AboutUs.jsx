@@ -38,13 +38,13 @@ function AboutUs() {
       data-aos-duration="1300"
     >
       <div className="max-w-7xl mx-auto text-center">
-        <p className="font-semibold tracking-wider text-lg md:text-2xl m-2 mb-6 md:mb-8 uppercase dark:text-gray-300 inline-block text-neutral-400 border-b-3 pb-1 border-neutral-300">
+        <p className="font-semibold tracking-wider text-lg md:text-2xl m-2 mb-6 md:mb-8 uppercase dark:text-[#260433]  inline-block text-[#260433] border-b-3 pb-1 border-fuchsia-700">
           About Us
         </p>
-        <h1 className="font-bold text-xl md:text-4xl dark:text-white text-black">
-          Evron <span className="text-neutral-400">Research</span>
+        <h1 className="font-bold text-xl md:text-4xl dark:text-white text-fuchsia-950">
+          Evron <span className="text-fuchsia-700">Research</span>
         </h1>
-        <p className="text-sm md:text-lg px-2 text-neutral-500 max-w-2xl mx-auto py-4">
+        <p className="text-sm md:text-lg px-2 text-black max-w-2xl mx-auto py-4">
           We provide global KPO and RPO services with a skilled team, driving
           success and growth worldwide
         </p>
@@ -95,19 +95,13 @@ function AboutUs() {
 
 const OurTeam = () => {
   const aboutCards = [
+    
     {
-      name: "Aoun Mirza",
-      role: "Business Development Head",
-      number: "+91 99308 20353",
-      linkedin: "https://www.linkedin.com/in/aoun-mirza-6b5173190/",
-      color: "blue",
-    },
-    {
-      name: "Shaikh Kaif",
+      name: "Aslan Shaikh",
       role: "Head of Operations",
-      number: "+91 91365 63434",
-      linkedin: "https://www.linkedin.com/in/shaikh-kaif-9b565732b/",
-      color: "red",
+      number: "+91 12345-67890",
+      linkedin: "https://www.linkedin.com/in/aslan",
+      color: "purple",
     },
 
   ];
@@ -122,13 +116,13 @@ const OurTeam = () => {
   return (
     <>
       <div className="px-4 py-8 lg:px-16">
-        <div className="bg-gray-50 p-6 md:p-10 rounded-xl">
+        <div className="bg-gray-100 p-6 md:p-10 rounded-xl">
           <div className="flex items-center gap-2 md:gap-3">
             {/* <img src={smallScreen} width={30} alt="Evron research" /> */}
-            <span className="text-xl md:text-2xl text-warning-500 font-semibold">
+            <span className="text-xl md:text-2xl text-fuchsia-900 font-semibold">
               |
             </span>
-            <span className="text-2xl md:3xl font-semibold">Our Team</span>
+            <span className="text-2xl md:3xl font-semibold text-fuchsia-900">Our Team</span>
           </div>
           <div className="flex flex-col lg:flex-row gap-8 mt-10 items-start lg:items-center">
             <div
@@ -136,7 +130,7 @@ const OurTeam = () => {
               data-aos="fade-down"
               data-aos-duration="1000"
             >
-              <h2 className="text-2xl md:text-3xl font-bold">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#260433] ">
                 Meet Our Team Of Experts
               </h2>
               <p className="text-gray-600 text-medium md:text-base mt-3">
@@ -147,7 +141,7 @@ const OurTeam = () => {
                 solutions and drive success for our clients.
               </p>
               <div>
-                <button className="mt-5 md:text-medium text-sm md:px-5 md:py-3 py-2 px-3 tracking-wide flex items-center gap-2 rounded-full text-white bg-black/90 hover:bg-black/100 font-bold">
+                <button className="mt-5 md:text-medium text-sm md:px-5 md:py-3 py-2 px-3 tracking-wide flex items-center gap-2 rounded-full text-white bg-[#260433] hover:bg-fuchsia-950 font-bold">
                   <NavLink to="/contact">Know More</NavLink>
                   <ChevronRight className="h-5 w-5" />
                 </button>

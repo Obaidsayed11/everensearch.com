@@ -33,10 +33,10 @@ export function WhatWeDoSection() {
         <Tabs 
           aria-label="Options"
           classNames={{
-            tabList: "gap-0 w-auto relative rounded-full p-1 bg-gray-100",
+            tabList: "gap-0 w-auto relative rounded-full p-1 bg-gray-200",
             cursor: "w-full bg-white shadow-md rounded-full",
             tab: "max-w-fit px-4 h-10 rounded-full",
-            tabContent: "group-data-[selected=true]:text-black text-gray-500 font-medium"
+            tabContent: "group-data-[selected=true]:text-[#260433]  text-gray-500 font-medium"
           }}
         >
           <Tab key="kpo-services" title="KPO-SERVICES">
@@ -65,7 +65,7 @@ export function WhatWeDoSection() {
               })}
             </div>
             <div className="flex justify-center">
-              <button className="flex justify-between items-center gap-2 py-2 px-4 border border-zinc-100 rounded-3xl text-sm font-normal cursor-pointer hover:bg-gray-100 bg-white">
+              <button className="flex justify-between items-center gap-2 py-2 px-4 border border-zinc-100 text-white rounded-3xl text-sm font-normal cursor-pointer hover:bg-fuchsia-900 bg-fuchsia-700">
                 <NavLink to="/kpo-services">More Services</NavLink>
                 <Plus className="h-3.5 w-3.5" />
               </button>
@@ -97,7 +97,7 @@ export function WhatWeDoSection() {
               })}
             </div>
             <div className="flex justify-center">
-              <button className="flex justify-between items-center gap-2 py-2 px-4 border border-zinc-100 rounded-3xl text-sm font-normal cursor-pointer hover:bg-gray-100 bg-white">
+              <button className="flex justify-between items-center gap-2 py-2 px-4 border border-zinc-100 text-white rounded-3xl text-sm font-normal cursor-pointer hover:bg-fuchsia-900 bg-fuchsia-700">
                 <NavLink to="/rpo-services">More Services</NavLink>
                 <Plus className="h-3.5 w-3.5" />
               </button>

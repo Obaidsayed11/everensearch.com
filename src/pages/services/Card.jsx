@@ -24,17 +24,8 @@ export const ServiceCard = ({
     cyan: "hover:border-cyan-600",
   } 
   const cardthemes = {
-    red: "text-red-600 bg-red-500 bg-opacity-5",
-    orange: "text-orange-600 bg-orange-600 bg-opacity-5",
-    green: "text-green-400 bg-green-400 bg-opacity-5",
-    blue: "text-blue-400 bg-blue-400 bg-opacity-5",
-    pink: "text-pink-600 bg-pink-600 bg-opacity-5",
-    purple: "text-purple-600 bg-purple-600 bg-opacity-5",
-    yellow: "text-yellow-500 bg-yellow-300 bg-opacity-5",
-    emerald: "text-green-600 bg-green-600 bg-opacity-5",
-    indigo: "text-indigo-800 bg-indigo-800 bg-opacity-5",
-    maroon: "text-red-700 bg-red-700 bg-opacity-5",
-    cyan: "text-cyan-600 bg-cyan-600 bg-opacity-5",
+    purple1: "text-fuchsia-800 bg-purple-200 bg-opacity-5",
+    purple2: "text-purple-200 bg-fuchsia-800 bg-opacity-5",
   };
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -42,8 +33,8 @@ export const ServiceCard = ({
     <div className={`flex cursor-pointer flex-col justify-between gap-5 rounded-2xl bg-white p-5 pb-2 border ${borderthemes[color]}`} >
       <div className="flex gap-4 flex-col-reverse md:flex-row justify-between">
         <div className="flex flex-col gap-1">
-          <span className="font-semibold text-md">{title}</span>
-          <span className="leading-5 text-sm font-medium text-gray-500">
+          <span className="font-semibold text-md text-[#260433]">{title}</span>
+          <span className="leading-5 text-sm font-medium text-black">
             {description}
           </span>
         </div>
@@ -66,9 +57,7 @@ export const ServiceCard = ({
           onOpenChange={(open) => setIsOpen(open)}
         >
           <button
-            
-            
-            className="hover:bg-gray-100 p-2 rounded-full text-slate-500"
+            className="hover:bg-gray-100 p-2 rounded-full text-[#13011A]"
           >
             <SquareArrowOutUpRight className="h-5 w-5" />
           </button>

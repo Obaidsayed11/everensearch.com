@@ -104,15 +104,15 @@ const Contact = () => {
           <div className="container mx-auto px-4 pt-16 md:pt-0 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-gray-200 backdrop-blur-sm border border-zinc-200 mb-6">
-                <span className="w-2 h-2 rounded-full bg-gray-500 mr-2"></span>
-                <span className="text-sm font-medium text-black">
+                <span className="w-2 h-2 rounded-full bg-fuchsia-900 mr-2"></span>
+                <span className="text-sm font-medium text-fuchsia-900">
                   Let's work together
                 </span>
               </div>
               <h1 className="text-4xl md:text-6xl font-bold  mb-6 leading-tight">
-                <span className="text-neutral-800">Contact Us</span>
+                <span className="text-[#260433]">Contact Us</span>
               </h1>
-              <p className="text-lg text-gray-500 max-w-2xl mx-auto mb-10">
+              <p className="text-lg text-black max-w-2xl mx-auto mb-10">
                 Have a question or want to work together? We'd love to hear from
                 you.
               </p>
@@ -128,10 +128,9 @@ const Contact = () => {
                 {/* Contact Info */}
                 <div className="lg:col-span-2 space-y-8" data-aos="fade-right">
                   <div>
-                    <h2 className="text-3xl text-gray-600 font-bold mb-2">
+                    <h2 className="text-3xl text-[#260433] border-b-3 inline-block border-fuchsia-900 font-bold mb-2">
                       Contact Information
                     </h2>
-                    <div className="w-20 h-1 bg-gray-400 rounded-full mb-6"></div>
                     <p className="text-gray-700 mb-8">
                       Reach out to us through any of these channels. Our team is
                       ready to assist you with your business needs.
@@ -144,7 +143,7 @@ const Contact = () => {
                         <MapPin className="h-6 w-6 text-white" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-lg text-gray-500 mb-1">
+                        <h3 className="font-semibold text-lg text-[#260433] mb-1">
                           Our Location
                         </h3>
                         <p className="text-gray-500">
@@ -158,11 +157,11 @@ const Contact = () => {
                         <Phone className="h-6 w-6 text-white" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-lg text-gray-500 mb-1">
+                        <h3 className="font-semibold text-lg text-[#260433] mb-1">
                           Phone
                         </h3>
                         <p className="text-gray-500">
-                          +91 90827-04714
+                          +91 12345-67890
                           <br />
                         </p>
                       </div>
@@ -172,11 +171,10 @@ const Contact = () => {
                         <Mail className="h-6 w-6 text-white" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-lg text-gray-500 mb-1">
+                        <h3 className="font-semibold text-lg text-[#260433] mb-1">
                           Email
                         </h3>
-                        <p className="text-gray-500">aoun@Evronresearch.com</p>
-                        <p className="text-gray-500">kaif@Evronresearch.com</p>
+                        <p className="text-gray-500">Aslan@Evronresearch.com</p>
                       </div>
                     </div>
                   </div>
@@ -187,7 +185,7 @@ const Contact = () => {
                   className="lg:col-span-3 bg-white backdrop-blur-sm rounded-2xl px-8 pt-6 pb-8 border border-zinc-200 shadow-sm"
                   data-aos="fade-left"
                 >
-                  <h2 className="text-2xl font-bold text-gray-500 mb-6">
+                  <h2 className="text-2xl font-bold text-[#260433] mb-6">
                     Send us a message
                   </h2>
 
@@ -242,7 +240,7 @@ const Contact = () => {
                         <div>
                           <label
                             htmlFor="name"
-                            className="block text-base font-medium text-gray-500 mb-2"
+                            className="block text-base font-medium text-fuchsia-950 mb-2"
                           >
                             Full Name
                           </label>
@@ -261,7 +259,7 @@ const Contact = () => {
                         <div>
                           <label
                             htmlFor="email"
-                            className="block text-base font-medium text-gray-500 mb-2"
+                            className="block text-base font-medium text-fuchsia-950 mb-2"
                           >
                             Email Address
                           </label>
@@ -281,7 +279,7 @@ const Contact = () => {
                       <div>
                         <label
                           htmlFor="message"
-                          className="block text-base font-medium text-gray-500 mb-2"
+                          className="block text-base font-medium text-fuchsia-950 mb-2"
                         >
                           Message
                         </label>
@@ -300,10 +298,10 @@ const Contact = () => {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className={`w-full flex cursor-pointer items-center justify-center px-6 py-4 rounded-xl text-white font-medium hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black transition duration-200 ${
+                        className={`w-full flex cursor-pointer items-center justify-center px-6 py-4 rounded-xl text-white font-medium hover:bg-fuchsia-950 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black transition duration-200 ${
                           isSubmitting
-                            ? "bg-gray-700 cursor-not-allowed"
-                            : "bg-black"
+                            ? "bg-fuchsia-800 cursor-not-allowed"
+                            : "bg-[#260433]"
                         }`}
                       >
                         {isSubmitting ? (

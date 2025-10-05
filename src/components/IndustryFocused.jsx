@@ -36,7 +36,7 @@ const industries = [
 
 function IndustryFocused() {
   return (
-    <div className="min-h-screen bg-[#260433] mt-16 mb-20 py-20">
+    <div className="min-h-screen bg-[#260433]  mt-16 mb-20 py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-20">
           <h2 className="text-sm uppercase tracking-wider text-white text-warning-600 font-semibold mb-3">

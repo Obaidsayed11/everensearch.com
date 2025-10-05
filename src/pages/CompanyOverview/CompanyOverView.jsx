@@ -37,8 +37,10 @@ const CompanyOverView = () => {
           // style={{ backgroundImage: `url(${bg})` }}
         ></div>
         {/* content */}
+
+        {/* }
         <div className="relative z-10 mx-auto flex max-w-[689px] flex-col items-center gap-8 text-center px-5">
-          <div className="max-w-[295px] sm:max-w-[492px] md:max-w-[689px]">
+          <div className="max-w-[295px] sm:max-w-[492px] md:max-w-[689px] ">
             <h2 className="font-semibold text-3xl text-neutral-900 tracking-tight sm:mx-auto sm:text-4xl sm:tracking-tight md:max-w-[689px] md:text-5xl md:leading-tight">
               Company Overview
             </h2>
@@ -71,6 +73,46 @@ const CompanyOverView = () => {
             </div>
           </div>
         </div>
+
+        */}
+
+
+        <div className="relative z-10 mx-auto flex max-w-[689px] flex-col items-center gap-8 text-center px-5">
+  <div className="max-w-[295px] sm:max-w-[492px] md:max-w-[689px]">
+    <h2 className="font-semibold text-3xl tracking-tight sm:mx-auto sm:text-4xl sm:tracking-tight md:max-w-[689px] md:text-5xl md:leading-tight bg-gradient-to-r from-[#ff7e5f] to-[#feb47b] bg-clip-text text-transparent">
+      Company Overview
+    </h2>
+
+    <p
+      className="mx-auto max-w-[405px] mt-7 text-neutral-600 
+      sm:max-w-[560px] 
+      md:max-w-[652px] md:text-lg md:leading-7"
+    >
+      Customized KPO & RPO Solutions for a Future-Ready Workforce
+    </p>
+  </div>
+  <div className="flex flex-col items-center gap-4">
+    <div className="flex flex-wrap gap-3 md:flex-nowrap">
+      <button className="inline-flex w-full items-center justify-center gap-1 bg-[#260433] hover:bg-fuchsia-900 text-white rounded-full border border-neutral-900 px-10 py-3 text-center text-base font-medium leading-6">
+        <NavLink to="/about">About Us</NavLink>
+      </button>
+      <button className="relative inline-flex hover:bg-gray-200 w-full items-center justify-center gap-1 whitespace-nowrap rounded-full border-2 border-gray-200 bg-white px-5 py-3 text-base font-medium text-[#260433]  leading-6 transition-all duration-100 ease-in-out">
+        <svg fill="none" viewBox="0 0 20 20" width="20" height="20">
+          <path
+            stroke="currentColor"
+            d="M8.709 14.155a4.793 4.793 0 0 1 5.412-6.55m-5.412 6.55a4.793 4.793 0 0 0 6.31 2.54c.1-.044.21-.06.317-.042l2.213.37c.18.03.337-.127.307-.307l-.371-2.21a.566.566 0 0 1 .041-.316 4.793 4.793 0 0 0-3.405-6.586m-5.412 6.55a5.845 5.845 0 0 1-2.682-.461.689.689 0 0 0-.385-.05l-2.695.45a.324.324 0 0 1-.373-.373l.452-2.69a.689.689 0 0 0-.05-.386 5.835 5.835 0 0 1 9.482-6.435 5.808 5.808 0 0 1 1.663 3.395"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="1.25"
+          ></path>
+        </svg>
+        <NavLink to="/contact">Talk to founders</NavLink>
+      </button>
+    </div>
+  </div>
+</div>
+
+
       </div>
       <CompanyAccordion />
       <CoreValueCard />
@@ -109,13 +151,13 @@ function CompanyAccordion() {
           indicator={
             <span
               aria-hidden="true"
-              className="text-gray-600 font-semibold text-xl transition-transform rotate-0"
+              className="text-[#260433]  font-semibold text-xl transition-transform rotate-0"
             >
               <Icon />
             </span>
           }
-          title={<span className="text-xl font-semibold">Our Mission</span>}
-          className="text-gray-600"
+          title={<span className="text-xl font-semibold text-fuchsia-950">Our Mission</span>}
+          className="text-black"
         >
           {missionContent}
         </AccordionItem>
@@ -130,15 +172,15 @@ function CompanyAccordion() {
           indicator={
             <span
               aria-hidden="true"
-              className="text-gray-600 font-semibold text-xl transition-transform rotate-0"
+              className="text-[#260433] font-semibold text-xl transition-transform rotate-0"
             >
               <Icon />
             </span>
           }
           title={
-            <span className="mt-2 block text-xl font-semibold">Our Vision</span>
+            <span className="mt-2 block text-xl font-semibold text-fuchsia-950">Our Vision</span>
           }
-          className="text-gray-600"
+          className="text-black"
         >
           {visionContent}
         </AccordionItem>
@@ -172,13 +214,13 @@ export default CompanyOverView;
 
 const CoreValueCard = () => {
   return (
-    <div className="min-h-screen relative z-[1000] bg-zinc-950">
+    <div className="min-h-screen relative z-[1000] bg-[#260433] ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold border-fuchsia-700 inline-block border-b-4 p-4 text-white mb-4 tracking-tight">
             Our Core Values
           </h2>
-          <div className="w-24 h-1 bg-indigo-500 mx-auto rounded-full"></div>
+          {/* <div className="w-24 h-1  mx-auto rounded-full"></div> */}
         </div>
 
         <div
@@ -187,7 +229,7 @@ const CoreValueCard = () => {
           data-aos-duration="1300"
         >
           {/* Innovation */}
-          <div className="group bg-zinc-900/40 border border-zinc-900 hover:bg-zinc-900/60 hover:border-zinc-800  rounded-2xl p-8">
+          <div className="group bg-gray-300/40 border border-zinc-900 hover:bg-zinc-500/60 hover:border-zinc-800  rounded-2xl p-8">
             <div className="flex items-center mb-4">
               <div className="p-3 bg-zinc-950 border border-zinc-900 rounded-xl">
                 <Lightbulb className="w-8 h-8 text-indigo-400" />
@@ -196,14 +238,14 @@ const CoreValueCard = () => {
                 Expertise & Innovation
               </h3>
             </div>
-            <p className="text-slate-300 leading-relaxed">
+            <p className="text-white leading-relaxed">
               Delivering specialized and highly skilled knowledge services to
               meet complex business needs.
             </p>
           </div>
 
           {/* Empowerment */}
-          <div className="group bg-zinc-900/40 border border-zinc-900 hover:bg-zinc-900/60 hover:border-zinc-800  rounded-2xl p-8">
+          <div className="group bg-gray-300/40 border border-zinc-900 hover:bg-zinc-500/60 hover:border-zinc-800  rounded-2xl p-8">
             <div className="flex items-center mb-4">
             <div className="p-3 bg-zinc-950 border border-zinc-900 rounded-xl">
                 <UsersRound className="w-8 h-8 text-green-400" />
@@ -212,14 +254,14 @@ const CoreValueCard = () => {
                 Talent Excellence:
               </h3>
             </div>
-            <p className="text-slate-300 leading-relaxed">
+            <p className="text-white leading-relaxed">
               Sourcing, attracting, and placing top-tier talent that aligns with
               the client’s organizational culture and goals.
             </p>
           </div>
 
           {/* Integrity */}
-          <div className="group bg-zinc-900/40 border border-zinc-900 hover:bg-zinc-900/60 hover:border-zinc-800  rounded-2xl p-8">
+          <div className="group bg-gray-300/40 border border-zinc-900 hover:bg-zinc-500/60 hover:border-zinc-800  rounded-2xl p-8">
             <div className="flex items-center mb-4">
             <div className="p-3 bg-zinc-950 border border-zinc-900 rounded-xl">
                 <ShieldAlert className="w-8 h-8 text-cyan-400" />
@@ -228,7 +270,7 @@ const CoreValueCard = () => {
                 Integrity
               </h3>
             </div>
-            <p className="text-slate-300 leading-relaxed">
+            <p className="text-white leading-relaxed">
               We uphold the highest standards of integrity in all our
               interactions, ensuring transparency, honesty, and ethical conduct
               in every aspect of our business.
@@ -236,7 +278,7 @@ const CoreValueCard = () => {
           </div>
 
           {/* Collaboration */}
-          <div className="group bg-zinc-900/40 border border-zinc-900 hover:bg-zinc-900/60 hover:border-zinc-800  rounded-2xl p-8">
+          <div className="group bg-gray-300/40 border border-zinc-900 hover:bg-zinc-500/60 hover:border-zinc-800  rounded-2xl p-8">
             <div className="flex items-center mb-4">
             <div className="p-3 bg-zinc-950 border border-zinc-900 rounded-xl">
                 <svg
@@ -262,7 +304,7 @@ const CoreValueCard = () => {
                 Collaboration
               </h3>
             </div>
-            <p className="text-slate-300 leading-relaxed">
+            <p className="text-white leading-relaxed">
               We believe in the power of collaboration, internally and
               externally, fostering teamwork and partnerships to achieve shared
               goals and mutual success.
@@ -270,7 +312,7 @@ const CoreValueCard = () => {
           </div>
 
           {/* Excellence - Full Width */}
-          <div className="group bg-zinc-900/40 border border-zinc-900 hover:bg-zinc-900/60 hover:border-zinc-800  rounded-2xl p-8">
+          <div className="group bg-gray-300/40 border border-zinc-900 hover:bg-zinc-500/60 hover:border-zinc-800  rounded-2xl p-8">
             <div className="flex items-center mb-4">
             <div className="p-3 bg-zinc-950 border border-zinc-900 rounded-xl">
                 <Trophy className="w-8 h-8 text-amber-400" />
@@ -279,7 +321,7 @@ const CoreValueCard = () => {
                 Excellence
               </h3>
             </div>
-            <p className="text-slate-300 leading-relaxed">
+            <p className="text-white leading-relaxed">
               Our commitment to excellence is unwavering. We strive for the
               highest quality in our work, processes, and client interactions,
               setting benchmarks for industry standards.
@@ -287,7 +329,7 @@ const CoreValueCard = () => {
           </div>
 
           {/* Quality and Precision */}
-          <div className="group bg-zinc-900/40 border border-zinc-900 hover:bg-zinc-900/60 hover:border-zinc-800  rounded-2xl p-8">
+          <div className="group  bg-gray-300/40 border border-zinc-900 hover:bg-zinc-500/60 hover:border-zinc-800  rounded-2xl p-8">
             <div className="flex items-center mb-4">
             <div className="p-3 bg-zinc-950 border border-zinc-900 rounded-xl">
                 <CircleCheck className="w-8 h-8 text-orange-400" />
@@ -296,7 +338,7 @@ const CoreValueCard = () => {
                 Quality & Precision
               </h3>
             </div>
-            <p className="text-slate-300 leading-relaxed">
+            <p className="text-white leading-relaxed">
               Ensuring accuracy and quality in all knowledge-driven processes,
               through research, analysis, and strategic solutions.
             </p>
@@ -304,11 +346,11 @@ const CoreValueCard = () => {
         </div>
 
         <div className="text-center mt-16">
-          <p className="text-slate-300 text-lg">
+          <p className="text-white text-lg">
             You have better things to do than worry about your business.{" "}
             <NavLink
               to="/contact"
-              className="text-indigo-400 hover:text-indigo-300 font-medium transition-colors"
+              className="text-fuchsia-700 hover:text-fuchsia-300 font-medium transition-colors"
             >
               Let's Discuss your Project
             </NavLink>
