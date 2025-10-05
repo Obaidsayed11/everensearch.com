@@ -53,7 +53,7 @@ const AboutUsSection = () => {
               and shape a thriving future.
             </p>
             <div>
-              <button className="mt-5 tracking-wide flex items-center gap-2 px-5 py-3 rounded-full text-white bg-fuchsia-800 hover:bg-fuchsia-950 font-bold">
+              <button className="mt-5 tracking-wide flex items-center gap-2 px-5 py-3 rounded-full text-white bg-fuchsia-700 hover:bg-fuchsia-900 font-bold">
                 <NavLink to="/about">Know more</NavLink>
                 <ChevronRight className="h-5 w-5" />
               </button>
