@@ -71,7 +71,7 @@ export function WhatWeDoSection() {
               </button>
             </div>
           </Tab>
-          <Tab key="rpo-services" title="RPO-SERVICES">
+          <Tab key="rpo-services" title="RPO-SERVICES" className="overflow-x-hidden">
             <div className="mt-8 mb-12 grid grid-cols-1 md:grid-cols-2 gap-6"  data-aos="fade-left" data-aos-duration="1500" data-aos-easing="ease-in-shine">
               {RPOSERVICES.map((service, index) => {
                 const isCardAllowed = RpoCards.includes(service.key);

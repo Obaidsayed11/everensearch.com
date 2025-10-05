@@ -219,7 +219,7 @@ export const Vortex = (props) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         ref={containerRef}
-        className="absolute inset-0 z-0 flex h-full w-full items-center justify-center bg-transparent"
+        className="absolute inset-0 z-0 flex h-full w-full items-center justify-center bg-transparent overflow-hidden"
       >
         <canvas ref={canvasRef}></canvas>
       </motion.div>
