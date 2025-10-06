@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet";
 import React, { useState } from "react";
 import emailjs from '@emailjs/browser';
-import { Send } from 'lucide-react'
+// import { Send } from 'lucide-react'
 
 import {
   Mail,
@@ -22,6 +22,8 @@ const Contact = () => {
   const [error, setError] = useState("");
   const [previewUrl, setPreviewUrl] = useState("");
 
+
+  emailjs.init("uH-pGiD9_znq1JrnF"); // Replace with your actual public key
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -79,7 +81,7 @@ const Contact = () => {
 
   const sendToGoogleSheets = async (data) => {
     try {
-      const response = await fetch('YOUR_GOOGLE_APPS_SCRIPT_URL', {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbxYjfGiYn5v5uZtP8ph7GUmVXvWRBUuh3UGPQT_7cY70iVypfRhXLTOTWt_wx54934S/exec', {
         method: 'POST',
         mode: 'no-cors',
         headers: {
@@ -107,8 +109,8 @@ const Contact = () => {
     try {
       // Send email via EmailJS
       const emailResult = await emailjs.send(
-        'YOUR_SERVICE_ID',      // Replace with your Service ID
-        'YOUR_TEMPLATE_ID',     // Replace with your Template ID
+        'service_e50othq',      // Replace with your Service ID
+        'template_myjejul',     // Replace with your Template ID
         {
           from_name: formData.name,
           from_email: formData.email,

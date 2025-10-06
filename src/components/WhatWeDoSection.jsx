@@ -29,26 +29,59 @@ export function WhatWeDoSection() {
   const [activeTab, setActiveTab] = useState("kpo");
   const [activeCard, setActiveCard] = useState(0);
   const cardsRef = useRef([]);
+  const rightPanelRef = useRef(null);
 
+
+useEffect(() => {
+  const container = rightPanelRef.current;
+  if (!container) return;
+
+  const handleScroll = () => {
+    const containerTop = container.getBoundingClientRect().top;
+
+    let newActive = 0;
+
+    cardsRef.current.forEach((card, index) => {
+      if (!card) return;
+      const rect = card.getBoundingClientRect();
+      if (rect.top - containerTop + rect.height / 2 > 0) {
+        newActive = index;
+        return;
+      }
+    });
+
+    setActiveCard(newActive);
+  };
+
+  container.addEventListener("scroll", handleScroll);
+  handleScroll(); // initialize
+  return () => container.removeEventListener("scroll", handleScroll);
+}, [activeTab]);
+
+
+  // Track scroll inside right panel only
   useEffect(() => {
+    const container = rightPanelRef.current;
+    if (!container) return;
+
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
+      const scrollTop = container.scrollTop;
+      const containerHeight = container.clientHeight;
 
       cardsRef.current.forEach((card, index) => {
-        if (card) {
-          const rect = card.getBoundingClientRect();
-          const cardMiddle = rect.top + rect.height / 2;
-          
-          if (cardMiddle < windowHeight / 2 && cardMiddle > 0) {
-            setActiveCard(index);
-          }
+        if (!card) return;
+        const offsetTop = card.offsetTop;
+        const offsetHeight = card.offsetHeight;
+        const cardMiddle = offsetTop + offsetHeight / 2;
+
+        if (cardMiddle >= scrollTop && cardMiddle <= scrollTop + containerHeight) {
+          setActiveCard(index);
         }
       });
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    container.addEventListener("scroll", handleScroll);
+    return () => container.removeEventListener("scroll", handleScroll);
   }, [activeTab]);
 
   const kpoContent = {
@@ -82,137 +115,129 @@ export function WhatWeDoSection() {
   const activeCards = activeTab === "kpo" ? KpoCards : RpoCards;
 
   return (
-    <div className="container relative mx-auto px-4 pb-1">
+    <div className="container relative mx-auto px-4 pb-16 overflow-x-hidden">
       <WhatWeDoHeader />
 
-      {/* Tab Selector */}
-      <div className="flex justify-center mb-12">
-        <div className="relative bg-gray-100 p-1.5 rounded-full inline-flex">
-          <div
-            className="absolute top-1.5 h-[calc(100%-12px)] bg-gradient-to-r from-purple-600 to-pink-600 rounded-full transition-all duration-300 ease-out shadow-lg"
-            style={{
-              width: "140px",
-              left: activeTab === "kpo" ? "6px" : "calc(50% + 6px)",
-            }}
-          ></div>
+      {/* Tabs */}
+      <div className="sticky top-0 z-30 bg-white/80 backdrop-blur-md py-6 mb-12">
+        <div className="flex justify-center">
+          <div className="relative bg-white shadow-md p-1.5 rounded-full inline-flex border border-gray-200">
+            <div
+              className="absolute top-1.5 h-[calc(100%-12px)] bg-gradient-to-r from-purple-600 to-pink-600 rounded-full transition-all duration-300 ease-out shadow-lg"
+              style={{
+                width: "calc(50% - 6px)",
+                left: activeTab === "kpo" ? "6px" : "calc(50% + 0px)",
+              }}
+            ></div>
 
-          <button
-            onClick={() => setActiveTab("kpo")}
-            className={`relative z-10 px-8 py-3 rounded-full font-semibold transition-colors duration-300 ${
-              activeTab === "kpo" ? "text-white" : "text-gray-600 hover:text-gray-900"
-            }`}
-          >
-            KPO Services
-          </button>
-          <button
-            onClick={() => setActiveTab("rpo")}
-            className={`relative z-10 px-8 py-3 rounded-full font-semibold transition-colors duration-300 ${
-              activeTab === "rpo" ? "text-white" : "text-gray-600 hover:text-gray-900"
-            }`}
-          >
-            RPO Services
-          </button>
+            <button
+              onClick={() => { setActiveTab("kpo"); setActiveCard(0); }}
+              className={`relative z-10 px-8 py-3 rounded-full font-semibold transition-colors duration-300 min-w-[150px] ${
+                activeTab === "kpo" ? "text-white" : "text-gray-700 hover:text-gray-900"
+              }`}
+            >
+              KPO Services
+            </button>
+            <button
+              onClick={() => { setActiveTab("rpo"); setActiveCard(0); }}
+              className={`relative z-10 px-8 py-3 rounded-full font-semibold transition-colors duration-300 min-w-[150px] ${
+                activeTab === "rpo" ? "text-white" : "text-gray-700 hover:text-gray-900"
+              }`}
+            >
+              RPO Services
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Sticky Scroll Layout */}
-      <div className="relative">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-          {/* Sticky Left Content */}
-          <div className="lg:sticky lg:top-24 lg:h-[calc(100vh-8rem)] flex flex-col justify-center">
-            <div className="space-y-6 p-8 rounded-3xl bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-100">
-              <div className="inline-block">
-                <span className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
-                  {activeContent.subtitle}
-                </span>
-              </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+        {/* Left Sticky Content */}
+        <div className="lg:sticky lg:top-32 lg:self-start">
+          <div className="space-y-6 p-8 rounded-3xl bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-100 min-h-[600px] flex flex-col justify-center">
+            <span className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
+              {activeContent.subtitle}
+            </span>
 
-              <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-gray-900 via-purple-900 to-gray-900 bg-clip-text text-transparent">
-                {activeContent.title}
-              </h2>
+            <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-gray-900 via-purple-900 to-gray-900 bg-clip-text text-transparent">
+              {activeContent.title}
+            </h2>
 
-              <p className="text-gray-600 text-lg leading-relaxed">
-                {activeContent.description}
-              </p>
+            <p className="text-gray-600 text-lg leading-relaxed">
+              {activeContent.description}
+            </p>
 
-              <div className="space-y-3 pt-4">
-                <h3 className="text-sm font-semibold text-gray-700 uppercase tracking-wider">
-                  Key Offerings
-                </h3>
-                {activeContent.features.map((feature, index) => (
+            <div className="space-y-3 pt-4">
+              <h3 className="text-sm font-semibold text-gray-700 uppercase tracking-wider">
+                Key Offerings
+              </h3>
+              {activeContent.features.map((feature, index) => (
+                <div
+                  key={index}
+                  className={`flex items-center gap-3 transition-all duration-500 ${
+                    activeCard === index ? "opacity-100 translate-x-0" : "opacity-60 -translate-x-2"
+                  }`}
+                >
+                  <div className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600"></div>
+                  <span className="text-gray-700 font-medium">{feature}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="pt-6">
+              <div className="text-xs text-gray-500 mb-2">Scroll to explore services →</div>
+              <div className="flex gap-2">
+                {activeCards.map((_, index) => (
                   <div
                     key={index}
-                    className={`flex items-center gap-3 transition-all duration-500 ${
-                      activeCard === index ? "opacity-100 translate-x-0" : "opacity-60 -translate-x-2"
+                    className={`h-1.5 rounded-full transition-all duration-300 ${
+                      index === activeCard
+                        ? "w-8 bg-gradient-to-r from-purple-600 to-pink-600"
+                        : "w-1.5 bg-gray-300"
                     }`}
-                  >
-                    <div className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600"></div>
-                    <span className="text-gray-700 font-medium">{feature}</span>
-                  </div>
+                  ></div>
                 ))}
-              </div>
-
-              <div className="pt-6">
-                <div className="text-xs text-gray-500 mb-2">
-                  Scroll to explore services →
-                </div>
-                <div className="flex gap-2">
-                  {activeCards.map((_, index) => (
-                    <div
-                      key={index}
-                      className={`h-1.5 rounded-full transition-all duration-300 ${
-                        index === activeCard
-                          ? "w-8 bg-gradient-to-r from-purple-600 to-pink-600"
-                          : "w-1.5 bg-gray-300"
-                      }`}
-                    ></div>
-                  ))}
-                </div>
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Scrolling Right Cards */}
-          <div className="space-y-6">
-            {activeServices.map((service, index) => {
-              const isCardAllowed = activeCards.includes(service.key);
-              if (!isCardAllowed) return null;
+        {/* Right Scrollable Cards */}
+        <div
+  ref={rightPanelRef}
+  className="space-y-6 max-h-[600px] overflow-y-auto pr-2 rounded-2xl scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent hover:scrollbar-thumb-gray-400 transition-all duration-300"
+>
+  {activeServices
+    .filter(service => activeCards.includes(service.key))
+    .map((service, index) => (
+      <div
+        key={service.key}
+        ref={(el) => (cardsRef.current[index] = el)}
+        className="scroll-item"
+      >
+        <ServiceCard
+          icon={service.icon}
+          title={service.title}
+          description={service.description}
+          detailPath={service.detailPath}
+          color={service.color}
+          className={`transform transition-all duration-500 ${
+            activeCard === index
+              ? "scale-105 shadow-2xl"
+              : "scale-100 hover:scale-105"
+          }`}
+        />
+      </div>
+    ))}
 
-              return (
-                <div
-                  key={index}
-                  ref={(el) => (cardsRef.current[index] = el)}
-                  className="scroll-item"
-                  data-aos="fade-left"
-                  data-aos-duration="800"
-                  data-aos-delay={index * 100}
-                >
-                  <ServiceCard
-                    icon={service.icon}
-                    title={service.title}
-                    description={service.description}
-                    detailPath={service.detailPath}
-                    color={service.color}
-                    className={`transform transition-all duration-500 ${
-                      activeCard === index
-                        ? "scale-105 shadow-2xl"
-                        : "scale-100 hover:scale-105"
-                    }`}
-                  />
-                </div>
-              );
-            })}
 
-            {/* More Services Button */}
-            <div className="flex justify-center pt-8">
+          <div className="flex justify-center pt-8 pb-8">
+            <NavLink to={activeTab === "kpo" ? "/kpo-services" : "/rpo-services"}>
               <button className="group relative flex items-center gap-2 py-3 px-6 text-white rounded-full text-sm font-medium overflow-hidden bg-gradient-to-r from-purple-600 to-pink-600 hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <NavLink to={activeTab === "kpo" ? "/kpo-services" : "/rpo-services"}>
-                  More Services
-                </NavLink>
+                More Services
                 <Plus className="h-4 w-4 transition-transform duration-300 group-hover:rotate-90" />
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
               </button>
-            </div>
+            </NavLink>
           </div>
         </div>
       </div>

@@ -3,6 +3,8 @@ import { React } from "react"
 import { KPOSERVICES } from "../../lib/utils";
 import { KpoServicesHeading } from "./ServicesHeading";
 import { ServiceCard } from "./Card";
+import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
+
 
 const KpoServices = () => {
   

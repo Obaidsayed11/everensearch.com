@@ -11,59 +11,68 @@ export const ServiceCard = ({
   color,
 }) => {
   const borderthemes = {
-    red: "hover:border-red-600",
-    orange: "hover:border-orange-600",
-    green: "hover:border-green-400",
-    blue: "hover:border-blue-400",
-    pink: "hover:border-pink-600",
-    purple: "hover:border-purple-600",
-    yellow: "hover:border-yellow-300",
-    emerald: "hover:border-green-600",
-    indigo: "hover:border-indigo-800",
-    maroon: "hover:border-red-900",
-    cyan: "hover:border-cyan-600",
-  } 
-  const cardthemes = {
-    purple1: "text-fuchsia-800 bg-purple-200 bg-opacity-5",
-    purple2: "text-purple-200 bg-fuchsia-800 bg-opacity-5",
+    red: "hover:border-red-600/70 border-red-100",
+    orange: "hover:border-orange-600/70 border-orange-100",
+    green: "hover:border-green-400/70 border-green-100",
+    blue: "hover:border-blue-400/70 border-blue-100",
+    pink: "hover:border-pink-600/70 border-pink-100",
+    purple: "hover:border-purple-600/70 border-purple-100",
+    yellow: "hover:border-yellow-300/70 border-yellow-100",
+    emerald: "hover:border-green-600/70 border-emerald-100",
+    indigo: "hover:border-indigo-800/70 border-indigo-100",
+    maroon: "hover:border-red-900/70 border-red-100",
+    cyan: "hover:border-cyan-600/70 border-cyan-100",
   };
+
+  const cardthemes = {
+    purple1: "text-fuchsia-800 bg-purple-50",
+    purple2: "text-purple-200 bg-fuchsia-800 bg-opacity-10",
+  };
+
   const [isOpen, setIsOpen] = useState(false);
+
   return (
     <Link to={detailPath}>
-    <div className={`flex cursor-pointer flex-col justify-between gap-5 rounded-2xl bg-white p-5 pb-2 border ${borderthemes[color]}`} >
-      <div className="flex gap-4 flex-col-reverse md:flex-row justify-between">
-        <div className="flex flex-col gap-1">
-          <span className="font-semibold text-md text-[#260433]">{title}</span>
-          <span className="leading-5 text-sm font-medium text-black">
-            {description}
-          </span>
+      <div
+        className={`group relative flex flex-col justify-between gap-5 rounded-3xl border p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-gradient-to-br from-white via-white to-gray-50 ${borderthemes[color]}`}
+      >
+        {/* subtle gradient ring glow on hover */}
+        <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-transparent via-transparent to-gray-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+        <div className="flex justify-between items-start gap-4">
+          <div className="flex flex-col gap-1">
+            <span className="font-semibold text-lg text-[#260433] tracking-wide">
+              {title}
+            </span>
+            <span className="text-sm text-gray-700 leading-6 font-medium">
+              {description}
+            </span>
+          </div>
+          <div>
+            <button
+              className={`p-3 rounded-xl shadow-md transition-all duration-300 transform group-hover:rotate-6 group-hover:scale-105 ${
+                cardthemes[color] || "bg-gray-50 text-gray-700"
+              }`}
+            >
+              <Icon className="h-6 w-6" aria-hidden="true" />
+            </button>
+          </div>
         </div>
-        <div>
-          <button
-            className={`shadow-sm px-3 py-2 rounded-lg ${
-              cardthemes[color] || "bg-white"
-            }`}
+
+        <div className="border-t border-gray-200 flex justify-end pt-2">
+          <Tooltip
+            content="Know More"
+            color="foreground"
+            className="px-3 py-2 rounded-md text-xs"
+            isOpen={isOpen}
+            onOpenChange={(open) => setIsOpen(open)}
           >
-            <Icon className={`h-6 w-5`} aria-hidden="true" />
-          </button>
+            <button className="hover:bg-gray-100 p-2 rounded-full text-[#13011A] transition-transform duration-300 hover:scale-110">
+              <SquareArrowOutUpRight className="h-5 w-5" />
+            </button>
+          </Tooltip>
         </div>
       </div>
-      <div className="border-t border-zinc-200 flex justify-end pt-2">
-        <Tooltip
-          content="Know More"
-          color="foreground"
-          className="px-3 py-2 rounded-md text-xs"
-          isOpen={isOpen}
-          onOpenChange={(open) => setIsOpen(open)}
-        >
-          <button
-            className="hover:bg-gray-100 p-2 rounded-full text-[#13011A]"
-          >
-            <SquareArrowOutUpRight className="h-5 w-5" />
-          </button>
-        </Tooltip>
-      </div>
-    </div>
     </Link>
   );
 };
