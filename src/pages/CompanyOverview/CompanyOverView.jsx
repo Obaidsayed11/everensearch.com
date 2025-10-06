@@ -5,6 +5,7 @@ import Stats from "../../components/ui/stats";
 // import bg from "../../image/bgimage.png";
 import { NavLink } from "react-router-dom";
 import { CircleCheck, Lightbulb, ShieldAlert, Trophy, UsersRound } from "lucide-react";
+import { SparklesCore } from "../../components/ui/sparkles";
 
 const CompanyOverView = () => {
   return (
@@ -25,99 +26,71 @@ const CompanyOverView = () => {
     `}
   </script>
 </Helmet>
-    <div className="overflow-hidden min-h-screen">
-      <div
-        className="relative mb-auto flex w-screen flex-col overflow-hidden pt-40 pb-20"
-        data-aos="fade-down"
-        data-aos-duration="1300"
-      >
-        {/* dotimage */}
-        <div
-          className="absolute top-0 right-0 bottom-0 left-0 bg-cover bg-bottom bg-no-repeat"
-          // style={{ backgroundImage: `url(${bg})` }}
-        ></div>
-        {/* content */}
+   <div className="relative overflow-hidden min-h-screen ">
+  {/* Sparkles Background Layer */}
+  <div className="absolute inset-0 z-0">
+    <SparklesCore
+      id="tsparticlesfullpage"
+      background="transparent"
+      minSize={0.6}
+      maxSize={1.4}
+      particleDensity={100}
+      className="w-full h-full"
+      particleColor="#d946ef" // fuchsia-600 tone
+    />
 
-        {/* }
-        <div className="relative z-10 mx-auto flex max-w-[689px] flex-col items-center gap-8 text-center px-5">
-          <div className="max-w-[295px] sm:max-w-[492px] md:max-w-[689px] ">
-            <h2 className="font-semibold text-3xl text-neutral-900 tracking-tight sm:mx-auto sm:text-4xl sm:tracking-tight md:max-w-[689px] md:text-5xl md:leading-tight">
-              Company Overview
-            </h2>
-
-            <p
-              className="mx-auto max-w-[405px] mt-7 text-neutral-600 
-              sm:max-w-[560px] 
-              md:max-w-[652px] md:text-lg md:leading-7"
-            >
-              Customized KPO & RPO Solutions for a Future-Ready Workforce
-            </p>
-          </div>
-          <div className="flex flex-col items-center gap-4">
-            <div className="flex flex-wrap gap-3 md:flex-nowrap">
-              <button className="inline-flex w-full items-center justify-center gap-1 bg-black text-white rounded-full border border-neutral-900 px-10 py-3 text-center text-base font-medium leading-6">
-                <NavLink to="/about">About Us</NavLink>
-              </button>
-              <button className="relative inline-flex hover:bg-gray-200 w-full items-center justify-center gap-1 whitespace-nowrap rounded-full border-2 border-gray-200 bg-white px-5 py-3 text-base font-medium text-gray-600 leading-6 transition-all duration-100 ease-in-out">
-                <svg fill="none" viewBox="0 0 20 20" width="20" height="20">
-                  <path
-                    stroke="currentColor"
-                    d="M8.709 14.155a4.793 4.793 0 0 1 5.412-6.55m-5.412 6.55a4.793 4.793 0 0 0 6.31 2.54c.1-.044.21-.06.317-.042l2.213.37c.18.03.337-.127.307-.307l-.371-2.21a.566.566 0 0 1 .041-.316 4.793 4.793 0 0 0-3.405-6.586m-5.412 6.55a5.845 5.845 0 0 1-2.682-.461.689.689 0 0 0-.385-.05l-2.695.45a.324.324 0 0 1-.373-.373l.452-2.69a.689.689 0 0 0-.05-.386 5.835 5.835 0 0 1 9.482-6.435 5.808 5.808 0 0 1 1.663 3.395"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="1.25"
-                  ></path>
-                </svg>
-                <NavLink to="/contact">Talk to founders</NavLink>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        */}
-
-
-        <div className="relative z-10 mx-auto flex max-w-[689px] flex-col items-center gap-8 text-center px-5">
-  <div className="max-w-[295px] sm:max-w-[492px] md:max-w-[689px]">
-    <h2 className="font-semibold text-3xl tracking-tight sm:mx-auto sm:text-4xl sm:tracking-tight md:max-w-[689px] md:text-5xl md:leading-tight bg-gradient-to-r from-[#ff7e5f] to-[#feb47b] bg-clip-text text-transparent">
-      Company Overview
-    </h2>
-
-    <p
-      className="mx-auto max-w-[405px] mt-7 text-neutral-600 
-      sm:max-w-[560px] 
-      md:max-w-[652px] md:text-lg md:leading-7"
-    >
-      Customized KPO & RPO Solutions for a Future-Ready Workforce
-    </p>
+    {/* Fuchsia Glow Gradient Overlay */}
+    {/* <div className="absolute inset-0 bg-gradient-to-b from-fuchsia-900/30 via-fuchsia-800/20 to-transparent"></div> */}
   </div>
-  <div className="flex flex-col items-center gap-4">
-    <div className="flex flex-wrap gap-3 md:flex-nowrap">
-      <button className="inline-flex w-full items-center justify-center gap-1 bg-[#260433] hover:bg-fuchsia-900 text-white rounded-full border border-neutral-900 px-10 py-3 text-center text-base font-medium leading-6">
-        <NavLink to="/about">About Us</NavLink>
-      </button>
-      <button className="relative inline-flex hover:bg-gray-200 w-full items-center justify-center gap-1 whitespace-nowrap rounded-full border-2 border-gray-200 bg-white px-5 py-3 text-base font-medium text-[#260433]  leading-6 transition-all duration-100 ease-in-out">
-        <svg fill="none" viewBox="0 0 20 20" width="20" height="20">
-          <path
-            stroke="currentColor"
-            d="M8.709 14.155a4.793 4.793 0 0 1 5.412-6.55m-5.412 6.55a4.793 4.793 0 0 0 6.31 2.54c.1-.044.21-.06.317-.042l2.213.37c.18.03.337-.127.307-.307l-.371-2.21a.566.566 0 0 1 .041-.316 4.793 4.793 0 0 0-3.405-6.586m-5.412 6.55a5.845 5.845 0 0 1-2.682-.461.689.689 0 0 0-.385-.05l-2.695.45a.324.324 0 0 1-.373-.373l.452-2.69a.689.689 0 0 0-.05-.386 5.835 5.835 0 0 1 9.482-6.435 5.808 5.808 0 0 1 1.663 3.395"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="1.25"
-          ></path>
-        </svg>
-        <NavLink to="/contact">Talk to founders</NavLink>
-      </button>
+
+  {/* Content Layer */}
+  <div
+    className="relative z-10 mb-auto flex w-screen flex-col overflow-hidden pt-40 pb-20"
+    data-aos="fade-down"
+    data-aos-duration="1300"
+  >
+    <div className="relative z-10 mx-auto flex max-w-[689px] flex-col items-center gap-8 text-center px-5">
+      <div className="max-w-[295px] sm:max-w-[492px] md:max-w-[689px]">
+        <h2 className="font-semibold text-3xl tracking-tight sm:mx-auto sm:text-4xl sm:tracking-tight md:max-w-[689px] md:text-5xl md:leading-tight bg-gradient-to-r from-[#ff7e5f] to-[#feb47b] bg-clip-text text-transparent">
+          Company Overview
+        </h2>
+
+        <p className="mx-auto max-w-[405px] mt-7 text-neutral-300 sm:max-w-[560px] md:max-w-[652px] md:text-lg md:leading-7">
+          Customized KPO & RPO Solutions for a Future-Ready Workforce
+        </p>
+      </div>
+
+      <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-wrap gap-3 md:flex-nowrap">
+          <button className="inline-flex w-full items-center justify-center gap-1 bg-[#260433] hover:bg-fuchsia-900 text-white rounded-full border border-neutral-900 px-10 py-3 text-center text-base font-medium leading-6">
+            <NavLink to="/about">About Us</NavLink>
+          </button>
+
+          <button className="relative inline-flex hover:bg-gray-200 w-full items-center justify-center gap-1 whitespace-nowrap rounded-full border-2 border-gray-200 bg-white px-5 py-3 text-base font-medium text-[#260433] leading-6 transition-all duration-100 ease-in-out">
+            <svg fill="none" viewBox="0 0 20 20" width="20" height="20">
+              <path
+                stroke="currentColor"
+                d="M8.709 14.155a4.793 4.793 0 0 1 5.412-6.55m-5.412 6.55a4.793 4.793 0 0 0 6.31 2.54c.1-.044.21-.06.317-.042l2.213.37c.18.03.337-.127.307-.307l-.371-2.21a.566.566 0 0 1 .041-.316 4.793 4.793 0 0 0-3.405-6.586m-5.412 6.55a5.845 5.845 0 0 1-2.682-.461.689.689 0 0 0-.385-.05l-2.695.45a.324.324 0 0 1-.373-.373l.452-2.69a.689.689 0 0 0-.05-.386 5.835 5.835 0 0 1 9.482-6.435 5.808 5.808 0 0 1 1.663 3.395"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.25"
+              ></path>
+            </svg>
+            <NavLink to="/contact">Talk to founders</NavLink>
+          </button>
+        </div>
+      </div>
     </div>
+  </div>
+
+  {/* Other Sections */}
+  <div className="relative z-10">
+    <CompanyAccordion />
+    <CoreValueCard />
+    <Stats />
   </div>
 </div>
 
-
-      </div>
-      <CompanyAccordion />
-      <CoreValueCard />
-      <Stats />
-    </div>
     </>
   );
 };

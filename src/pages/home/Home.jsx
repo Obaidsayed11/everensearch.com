@@ -8,7 +8,7 @@ import Stats from "../../components/ui/stats";
 import IndustryFocused from "../../components/IndustryFocused";
 // import Testimonial from "../../components/Testimonials"
 const Home = () => {
-  return (
+  return ( 
     <>
       <Helmet>
         <title>

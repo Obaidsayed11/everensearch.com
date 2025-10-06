@@ -1,5 +1,7 @@
 import { Helmet } from "react-helmet";
 import React, { useState } from "react";
+import emailjs from '@emailjs/browser';
+import { Send } from 'lucide-react'
 
 import {
   Mail,
@@ -24,56 +26,128 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setIsSubmitting(true);
+  //   setError("");
+
+  //   try {
+  //     const emailData = {
+  //       apikey:
+  //         "BF0425CAE3DDC0AEC81C07F503513D745223645D9EC1D051B91457401C2F3FEEC3569D8CCFE52B6C0990E9820620E9DD",
+  //       from: "aoun@Evronresearch.com",
+  //       to: "aoun@Evronresearch.com",
+  //       subject: "New Form Submitted",
+  //       bodyHtml: `
+  //       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+  //         <h2>New Contact Form Submission</h2>
+  //         <p><strong>Name:</strong> ${formData.name}</p>
+  //         <p><strong>Email:</strong> ${formData.email}</p>
+  //         <div style="margin-top: 10px;">
+  //           <h3>Message:</h3>
+  //           <p style="white-space: pre-line;">${formData.message}</p>
+  //         </div>
+  //       </div>
+  //     `,
+  //     };
+
+  //     const response = await fetch(
+  //       "https://api.elasticemail.com/v2/email/send",
+  //       {
+  //         method: "POST",
+  //         headers: {
+  //           "Content-Type": "application/x-www-form-urlencoded",
+  //         },
+  //         body: new URLSearchParams(emailData),
+  //       }
+  //     );
+
+  //     const result = await response.json();
+  //     if (result) {
+  //       setIsSubmitted(true);
+  //       setFormData({ name: "", email: "", message: "" });
+  //     }
+  //   } catch (err) {
+  //     console.error(err);
+  //     setError(
+  //       "An error occurred while sending your message. Please try again later."
+  //     );
+  //   } finally {
+  //     setIsSubmitting(false);
+  //   }
+  // };
+
+  const sendToGoogleSheets = async (data) => {
+    try {
+      const response = await fetch('YOUR_GOOGLE_APPS_SCRIPT_URL', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          message: data.message,
+          timestamp: new Date().toISOString()
+        })
+      });
+      return true;
+    } catch (err) {
+      console.error('Google Sheets error:', err);
+      return false;
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setError("");
+    setError('');
 
     try {
-      const emailData = {
-        apikey:
-          "BF0425CAE3DDC0AEC81C07F503513D745223645D9EC1D051B91457401C2F3FEEC3569D8CCFE52B6C0990E9820620E9DD",
-        from: "aoun@Evronresearch.com",
-        to: "aoun@Evronresearch.com",
-        subject: "New Form Submitted",
-        bodyHtml: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2>New Contact Form Submission</h2>
-          <p><strong>Name:</strong> ${formData.name}</p>
-          <p><strong>Email:</strong> ${formData.email}</p>
-          <div style="margin-top: 10px;">
-            <h3>Message:</h3>
-            <p style="white-space: pre-line;">${formData.message}</p>
-          </div>
-        </div>
-      `,
-      };
-
-      const response = await fetch(
-        "https://api.elasticemail.com/v2/email/send",
+      // Send email via EmailJS
+      const emailResult = await emailjs.send(
+        'YOUR_SERVICE_ID',      // Replace with your Service ID
+        'YOUR_TEMPLATE_ID',     // Replace with your Template ID
         {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-          body: new URLSearchParams(emailData),
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_name: 'Evron Research Team',
         }
       );
 
-      const result = await response.json();
-      if (result) {
+      // Send to Google Sheets
+      await sendToGoogleSheets(formData);
+
+      if (emailResult.status === 200) {
         setIsSubmitted(true);
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ name: '', email: '', message: '' });
+        
+        // Reset success message after 5 seconds
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 5000);
       }
     } catch (err) {
-      console.error(err);
-      setError(
-        "An error occurred while sending your message. Please try again later."
-      );
+      console.error('Error:', err);
+      setError('Failed to send message. Please try again later.');
     } finally {
       setIsSubmitting(false);
     }
   };
+
+  if (isSubmitted) {
+    return (
+      <div className="bg-green-900/20 text-green-400 p-6 rounded-lg border border-green-800 text-center">
+        <h3 className="text-xl font-semibold mb-2">Thank You!</h3>
+        <p>Your message has been sent successfully. We'll get back to you soon.</p>
+      </div>
+    );
+  }
+  
+  
+  
   return (
     <>
       <Helmet>

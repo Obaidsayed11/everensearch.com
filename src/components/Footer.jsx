@@ -1,10 +1,13 @@
 import React from "react";
 // import largeScreen from "../image/largescreen.png";
 import { NavLink } from "react-router-dom";
+import { BackgroundBeamsWithCollision } from "../components/ui/background-beams-with-collision";
 
 const Footer = () => {
   return (
+   
     <footer className="bg-[#260433] text-white">
+       <BackgroundBeamsWithCollision >
       <div className="px-4 py-8 sm:px-6 lg:px-8 text-white">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-28 text-white">
           {/* Logo and Description */}
@@ -263,6 +266,7 @@ const Footer = () => {
           </span>
         </p>
       </div>
+      </BackgroundBeamsWithCollision>
     </footer>
   );
 };
