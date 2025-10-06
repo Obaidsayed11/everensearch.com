@@ -50,17 +50,15 @@ const AboutUsSection = () => {
               data-aos-duration="1000"
             >
               <div className="inline-block">
-                <span className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider">
+                <span className="bg-fuchsia-800  text-white px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider">
                   Why Choose Us
                 </span>
               </div>
               
-              <h2 className="text-3xl md:text-5xl font-bold leading-tight bg-gradient-to-r from-gray-900 via-purple-900 to-pink-900 bg-clip-text text-transparent">
+              <h2 className="text-3xl md:text-5xl font-bold leading-tight bg-[#260433] border-fuchsia-700 border-b-4 inline-block bg-clip-text text-transparent">
                 Empowering Business Success with Tailored Solutions
               </h2>
-              
-              <div className="h-1 w-20 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full"></div>
-              
+                            
               <p className="text-gray-600 text-base md:text-lg leading-relaxed">
                 At Evron Research, we empower businesses by offering a blend of
                 tailored solutions designed for success. With expertise in talent
@@ -77,25 +75,25 @@ const AboutUsSection = () => {
 
               <div className="flex flex-wrap gap-4 pt-4">
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-purple-600"></div>
+                  <div className="w-2 h-2 rounded-full bg-fuchsia-900"></div>
                   <span className="text-sm text-gray-700 font-medium">10+ Years Experience</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-pink-600"></div>
+                  <div className="w-2 h-2 rounded-full bg-fuchsia-900"></div>
                   <span className="text-sm text-gray-700 font-medium">500+ Happy Clients</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-purple-600"></div>
+                  <div className="w-2 h-2 rounded-full bg-fuchsia-900"></div>
                   <span className="text-sm text-gray-700 font-medium">24/7 Support</span>
                 </div>
               </div>
               
               <div className="pt-4">
                 <NavLink to="/about">
-                  <button className="group relative flex items-center gap-2 px-8 py-4 rounded-full text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:shadow-2xl font-semibold transition-all duration-300 hover:scale-105 overflow-hidden">
+                  <button className="group relative flex items-center gap-2 px-8 py-4 rounded-full text-white bg-fuchsia-900 hover:shadow-2xl font-semibold transition-all duration-300 hover:scale-105 overflow-hidden">
                     <span className="relative z-10">Discover More</span>
                     <ChevronRight className="relative z-10 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-pink-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-fuchsia-900 from-purple-700 to-pink-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </button>
                 </NavLink>
               </div>
@@ -111,32 +109,30 @@ const AboutUsSection = () => {
                 {aboutCards.map((aboutCard, index) => (
                   <div
                     key={index}
-                    className={`transform transition-all duration-500 hover:-translate-y-2 ${
-                      index % 2 === 0 ? "sm:translate-y-8" : "sm:-translate-y-0"
-                    }`}
+                    className={`transform transition-all duration-500`}
                     data-aos="fade-up"
                     data-aos-delay={index * 100}
                   >
                     <div className="group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden">
                       {/* Hover Gradient Background */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute inset-0 transition-opacity duration-300"></div>
                       
                       <div className="relative z-10">
-                        <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${
-                          aboutCard.color === 'red' ? 'from-red-100 to-red-200' :
-                          aboutCard.color === 'green' ? 'from-green-100 to-green-200' :
-                          aboutCard.color === 'blue' ? 'from-blue-100 to-blue-200' :
-                          'from-pink-100 to-pink-200'
+                        <div className={`inline-flex p-4 rounded-xl  ${
+                          aboutCard.color === 'red' ? 'bg-purple-200' :
+                          aboutCard.color === 'green' ? 'bg-fuchsia-800' :
+                          aboutCard.color === 'blue' ? 'bg-purple-200' :
+                          'bg-fuchsia-800'
                         } mb-4 transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3`}>
                           <aboutCard.icon className={`h-8 w-8 ${
-                            aboutCard.color === 'red' ? 'text-red-600' :
-                            aboutCard.color === 'green' ? 'text-green-600' :
-                            aboutCard.color === 'blue' ? 'text-blue-600' :
-                            'text-pink-600'
+                            aboutCard.color === 'red' ? 'text-fuchsia-800' :
+                            aboutCard.color === 'green' ? 'text-purple-200' :
+                            aboutCard.color === 'blue' ? 'text-fuchsia-800' :
+                            'text-purple-200'
                           }`} />
                         </div>
                         
-                        <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-purple-700 transition-colors duration-300">
+                        <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-fuchsia-900 transition-colors duration-300">
                           {aboutCard.title}
                         </h3>
                         
@@ -144,26 +140,18 @@ const AboutUsSection = () => {
                           {aboutCard.description}
                         </p>
                         
-                        <div className="mt-4 flex items-center text-purple-600 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-0 group-hover:translate-x-2">
+                        <div className="mt-4 flex items-center text-fuchsia-900 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-0 group-hover:translate-x-2">
                           Learn more 
                           <ChevronRight className="h-4 w-4 ml-1" />
                         </div>
                       </div>
-                      
-                      {/* Decorative corner element */}
-                      <div className={`absolute -bottom-6 -right-6 w-24 h-24 rounded-full ${
-                        aboutCard.color === 'red' ? 'bg-red-100' :
-                        aboutCard.color === 'green' ? 'bg-green-100' :
-                        aboutCard.color === 'blue' ? 'bg-blue-100' :
-                        'bg-pink-100'
-                      } opacity-20 group-hover:scale-150 transition-transform duration-500`}></div>
+                    
                     </div>
                   </div>
                 ))}
               </div>
               
               {/* Floating decorative element */}
-              <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full blur-2xl opacity-20 animate-pulse"></div>
             </div>
           </div>
         </div>

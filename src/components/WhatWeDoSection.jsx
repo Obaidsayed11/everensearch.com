@@ -116,14 +116,17 @@ useEffect(() => {
 
   return (
     <div className="container relative mx-auto px-4 pb-16 overflow-x-hidden">
+    <div className="w-full text-center">
       <WhatWeDoHeader />
+    
+    </div>
 
       {/* Tabs */}
       <div className="sticky top-0 z-30 bg-white/80 backdrop-blur-md py-6 mb-12">
         <div className="flex justify-center">
           <div className="relative bg-white shadow-md p-1.5 rounded-full inline-flex border border-gray-200">
             <div
-              className="absolute top-1.5 h-[calc(100%-12px)] bg-gradient-to-r from-purple-600 to-pink-600 rounded-full transition-all duration-300 ease-out shadow-lg"
+              className="absolute top-1.5 h-[calc(100%-12px)] bg-fuchsia-900 rounded-full transition-all duration-300 ease-out shadow-lg"
               style={{
                 width: "calc(50% - 6px)",
                 left: activeTab === "kpo" ? "6px" : "calc(50% + 0px)",
@@ -153,12 +156,15 @@ useEffect(() => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
         {/* Left Sticky Content */}
         <div className="lg:sticky lg:top-32 lg:self-start">
-          <div className="space-y-6 p-8 rounded-3xl bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-100 min-h-[600px] flex flex-col justify-center">
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
+          <div className="space-y-6 p-8 rounded-3xl bg-blue-100 border  border-purple-100 min-h-[600px] flex flex-col justify-center">
+            <span className="bg-[#260433] text-white px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
               {activeContent.subtitle}
             </span>
 
-            <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-gray-900 via-purple-900 to-gray-900 bg-clip-text text-transparent">
+            <h2 className={`text-4xl lg:text-5xl font-bold bg-clip-text text-transparent ${
+              activeTab === "kpo" ? "bg-[linear-gradient(to_right,_#093028,_#6CC686)]" : "bg-[linear-gradient(to_right,_#3e4044,_#2d78f1)]"
+              }`}
+              >
               {activeContent.title}
             </h2>
 
@@ -177,21 +183,21 @@ useEffect(() => {
                     activeCard === index ? "opacity-100 translate-x-0" : "opacity-60 -translate-x-2"
                   }`}
                 >
-                  <div className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600"></div>
-                  <span className="text-gray-700 font-medium">{feature}</span>
+                  <div className="w-2 h-2 rounded-full bg-fuchsia-800"></div>
+                  <span className="text-gray-900 font-medium">{feature}</span>
                 </div>
               ))}
             </div>
 
             <div className="pt-6">
-              <div className="text-xs text-gray-500 mb-2">Scroll to explore services →</div>
+              <div className="text-xs text-gray-700 mb-2">Scroll to explore services →</div>
               <div className="flex gap-2">
                 {activeCards.map((_, index) => (
                   <div
                     key={index}
                     className={`h-1.5 rounded-full transition-all duration-300 ${
                       index === activeCard
-                        ? "w-8 bg-gradient-to-r from-purple-600 to-pink-600"
+                        ? "w-8 bg-fuchsia-800"
                         : "w-1.5 bg-gray-300"
                     }`}
                   ></div>
@@ -232,7 +238,7 @@ useEffect(() => {
 
           <div className="flex justify-center pt-8 pb-8">
             <NavLink to={activeTab === "kpo" ? "/kpo-services" : "/rpo-services"}>
-              <button className="group relative flex items-center gap-2 py-3 px-6 text-white rounded-full text-sm font-medium overflow-hidden bg-gradient-to-r from-purple-600 to-pink-600 hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <button className="group relative flex items-center gap-2 py-3 px-6 text-white rounded-full text-sm font-medium overflow-hidden bg-fuchsia-900 hover:shadow-xl transition-all duration-300 hover:scale-105">
                 More Services
                 <Plus className="h-4 w-4 transition-transform duration-300 group-hover:rotate-90" />
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>

@@ -4,7 +4,7 @@ import React from "react";
 export const WhatWeDoHeader = () => {
   return (
     <div className="py-5 mt-5">
-      <span className="text-2xl md:text-3xl font-bold text-[#260433] ">What We Do?</span>
+      <span className="text-2xl md:text-7xl font-bold text-[#260433] ">What We Do?</span>
     </div>
   );
 };
