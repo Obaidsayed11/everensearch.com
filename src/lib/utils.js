@@ -40,7 +40,7 @@ export const KPOSERVICES = [{
         title: "Email List Building",
         detailPath: "/kpo-services/email-list-building",
         description: "Targeted lists. Quality leads. Maximum impact.",
-        key: "email-list",
+        key: "email-list-building",
         color: "purple1",
     },
     {
@@ -64,7 +64,7 @@ export const KPOSERVICES = [{
         title: "Customize B2B Database",
         detailPath: "/kpo-services/customize-b2b-database",
         description: "Tailored data. Better targeting. Greater results",
-        key: "customize-b2b",
+        key: "customize-b2b-database",
         color: "purple2",
     },
     {
@@ -88,7 +88,7 @@ export const KPOSERVICES = [{
         title: "LinkedIn Data Search",
         detailPath: "/kpo-services/linkedin-data-search",
         description: "Targeted profiles. Relevant connections. Precise insights.",
-        key: "linkedin-data",
+        key: "linkedin-data-search",
         color: "purple1",
     },
     {
@@ -104,7 +104,7 @@ export const KPOSERVICES = [{
         title: "Online-Offline Data entry Services",
         detailPath: "/kpo-services/online-offline-data",
         description: "Fast, accurate, and reliable data input for seamless operations.",
-        key: "online-offline",
+        key: "online-offline-data",
         color: "purple1",
     },
     {

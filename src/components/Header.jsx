@@ -14,12 +14,13 @@ import {
 import { NavLink } from "react-router-dom";
 import Dropdowns from "./ui/dropdown";
 import { MenuIcon } from "lucide-react";
-
+import logo from '../assets/logo.png'
 const Header = () => {
   return (
     <header className="top-0 fixed pt-5 px-2 w-full z-[900]">
       <div className="py-1.5 px-3 flex shadow-sm justify-between mx-auto w-full max-w-[984px] bg-white/40 backdrop-blur-xl items-center rounded-full border-zinc-200 border">
         {/* Logo and Menu for Small Screens */}
+        {/* <img src={logo} alt="" className="h-20 w-40"/> */}
         <div className="icon flex items-center">
           <span className="sm:hidden items-center flex">
             <Dropdown className="mt-4">

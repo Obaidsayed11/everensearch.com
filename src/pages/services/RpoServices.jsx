@@ -1,54 +1,204 @@
-import { Helmet } from 'react-helmet';
-import { React } from "react"
+import React, { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@nextui-org/react";
+import { Helmet } from "react-helmet";
+
 import { RPOSERVICES } from "../../lib/utils";
-import { ServiceCard } from "./Card";
+import { serviceDetailsRPO } from "../../lib/utils2";
 import { RpoServicesHeading } from "./ServicesHeading";
 
+const colorMap = {
+  purple1: "text-fuchsia-800 bg-purple-200",
+  purple2: "text-purple-200 bg-fuchsia-800",
+};
+
+const CloseIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="h-4 w-4 text-black"
+  >
+    <path d="M18 6l-12 12" />
+    <path d="M6 6l12 12" />
+  </svg>
+);
+
+const useOutsideClick = (ref, callback) => {
+  useEffect(() => {
+    const listener = (event) => {
+      if (!ref.current || ref.current.contains(event.target)) return;
+      callback(event);
+    };
+    document.addEventListener("mousedown", listener);
+    document.addEventListener("touchstart", listener);
+    return () => {
+      document.removeEventListener("mousedown", listener);
+      document.removeEventListener("touchstart", listener);
+    };
+  }, [ref, callback]);
+};
+
 const RpoServices = () => {
+  const [active, setActive] = useState(null);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    function onKeyDown(event) {
+      if (event.key === "Escape") setActive(null);
+    }
+    document.body.style.overflow = active ? "hidden" : "auto";
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [active]);
+
+  useOutsideClick(ref, () => setActive(null));
+
   return (
     <>
-    <Helmet>
+      <Helmet>
         <title>RPO Services - Evron Research</title>
-        <meta name="description" content="Explore Evron Research's RPO services to streamline your recruitment processes." />
-        <link rel="canonical" href="https://www.Evronresearch.com/rpo-services" />
+        <meta
+          name="description"
+          content="Explore Evron Research's RPO services to streamline your recruitment processes."
+        />
+        <link
+          rel="canonical"
+          href="https://www.Evronresearch.com/rpo-services"
+        />
         <script type="application/ld+json">
           {`
-            {
-              "@context": "https://schema.org",
-              "@type": "WebPage",
-              "url": "https://www.Evronresearch.com/rpo-services",
-              "name": "RPO Services - Evron Research",
-              "description": "Explore Evron Research's RPO services to streamline your recruitment processes."
-            }
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "url": "https://www.Evronresearch.com/rpo-services",
+            "name": "RPO Services - Evron Research",
+            "description": "Explore Evron Research's RPO services to streamline your recruitment processes."
+          }
           `}
         </script>
       </Helmet>
-    <div className="bg-gray-50 bg-opacity-75">
-      <RpoServicesHeading />
-      <div className="container relative mx-auto px-4 pb-1 overflow-x-hidden"   data-aos="fade-down"
-      
-      data-aos-duration="1300">
-        <div className="mt-8 mb-24 grid grid-cols-1 md:grid-cols-2 gap-6 px-6">
-          {RPOSERVICES.map((service,index) => (
-            <ServiceCard
-              key={service.key}
-              icon={service.icon}
-              title={service.title}
-              description={service.description}
-              detailPath={service.detailPath}
-              color={service.color}
-              className={`transform transition-transform duration-300 hover:-translate-y-1 ${
-                index % 3 === 0
-                  ? "lg:translate-y-4"
-                  : index % 3 === 1
-                  ? "lg:translate-y-0"
-                  : "lg:-translate-y-4"
-              }`}
-            />
-          ))}
+
+      <div className="bg-gray-50 bg-opacity-75">
+        <RpoServicesHeading />
+
+        {/* Expanded Modal */}
+        <AnimatePresence mode="wait">
+          {active && (
+            <div className="fixed inset-0 grid place-items-center z-[100] p-4 bg-black/30 backdrop-blur-sm">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                ref={ref}
+                className="relative w-full max-w-4xl max-h-[90vh] flex flex-col md:flex-row bg-white dark:bg-neutral-900 rounded-2xl overflow-hidden shadow-2xl lg:mt-14 md:mt-12"
+              >
+                {/* Close Button inside card */}
+                <button
+                  className="absolute top-3 right-3 flex items-center justify-center bg-gray-100 dark:bg-neutral-800 rounded-full h-9 w-9 shadow-md hover:bg-gray-200 dark:hover:bg-neutral-700 transition-colors z-20"
+                  onClick={() => setActive(null)}
+                >
+                  <CloseIcon className="text-black dark:text-white w-5 h-5" />
+                </button>
+
+                {/* Left section - Icon */}
+                <div
+                  className={`w-full md:w-1/2 flex items-center justify-center bg-gradient-to-br ${
+                    colorMap[active.color]
+                  } p-8`}
+                >
+                  <active.icon
+                    className="w-28 h-28 md:w-36 md:h-36 text-white"
+                    strokeWidth={1.5}
+                  />
+                </div>
+
+                {/* Right section - Content */}
+                <div className="w-full md:w-1/2 overflow-y-auto p-6 md:p-8 flex flex-col justify-between">
+                  <div>
+                    <h3 className="font-bold text-xl md:text-2xl text-neutral-800 dark:text-neutral-200 mb-3 md:mb-4">
+                      {serviceDetailsRPO[active.key]?.title || active.title}
+                    </h3>
+                    <p className="text-neutral-600 dark:text-neutral-400 mb-4 md:mb-6 text-sm md:text-base leading-relaxed">
+                      {serviceDetailsRPO[active.key]?.details ||
+                        active.description}
+                    </p>
+
+                    <ul className="text-neutral-600 dark:text-neutral-400 text-sm md:text-base list-none space-y-3 md:space-y-4">
+                      {serviceDetailsRPO[active.key]?.points?.map((p, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <span className="mt-1 text-green-600">✔</span>
+                          <span>{p.content}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="mt-6">
+                    <Button
+                      className="h-10 w-full max-w-[200px] bg-[#260433] hover:bg-fuchsia-950 px-4 py-2 text-sm font-medium sm:w-auto text-white"
+                      radius="full"
+                    >
+                      Contact Us
+                    </Button>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          )}
+        </AnimatePresence>
+
+        {/* Cards Grid */}
+        <div
+          className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-4 px-4 mb-10"
+          data-aos="fade-down"
+          data-aos-duration="1300"
+        >
+          {RPOSERVICES.map((card) => {
+            const IconComponent = card.icon;
+            return (
+              <motion.div
+                key={card.key}
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.2 }}
+                className="p-6 flex flex-col md:flex-row justify-between items-center bg-white hover:shadow-lg rounded-xl cursor-pointer transition-shadow duration-200"
+              >
+                <div className="flex gap-4 flex-col md:flex-row items-center md:items-start w-full">
+                  <div
+                    className={`h-16 w-16 rounded-lg flex items-center justify-center ${
+                      colorMap[card.color]
+                    } flex-shrink-0`}
+                  >
+                    <IconComponent className="w-8 h-8" strokeWidth={1.5} />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-base text-neutral-800 dark:text-neutral-200 text-center md:text-left mb-1">
+                      {card.title}
+                    </h3>
+                    <p className="text-neutral-600 dark:text-neutral-400 text-sm text-center md:text-left">
+                      {card.description}
+                    </p>
+                  </div>
+                </div>
+
+                <button
+                  onClick={() => setActive(card)}
+                  className="px-5 py-2 text-sm rounded-full font-semibold bg-gray-100 hover:bg-fuchsia-800 hover:text-purple-200 text-neutral-700 mt-4 md:mt-0 transition-colors duration-200 flex-shrink-0"
+                >
+                  View
+                </button>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
-    </div>
     </>
   );
 };
