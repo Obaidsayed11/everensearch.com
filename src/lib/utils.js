@@ -57,7 +57,7 @@ export const KPOSERVICES = [{
         detailPath: "/kpo-services/data-refresh",
         description: "Update. Verify. Stay current.",
         key: "data-refresh",
-        color: "purple2",
+        color: "purple1",
     },
     {
         icon: Database,
@@ -65,7 +65,7 @@ export const KPOSERVICES = [{
         detailPath: "/kpo-services/customize-b2b-database",
         description: "Tailored data. Better targeting. Greater results",
         key: "customize-b2b",
-        color: "purple1",
+        color: "purple2",
     },
     {
         icon: Building,
@@ -89,7 +89,7 @@ export const KPOSERVICES = [{
         detailPath: "/kpo-services/linkedin-data-search",
         description: "Targeted profiles. Relevant connections. Precise insights.",
         key: "linkedin-data",
-        color: "purple2",
+        color: "purple1",
     },
     {
         icon: Volume2,
@@ -97,7 +97,7 @@ export const KPOSERVICES = [{
         detailPath: "/kpo-services/lead-generation",
         description: "Qualified leads. Stronger opportunities. Greater conversions.",
         key: "lead-generation",
-        color: "purple1",
+        color: "purple2",
     },
     {
         icon: Server,
@@ -121,7 +121,7 @@ export const KPOSERVICES = [{
         detailPath: "/kpo-services/data-mining",
         description: "Extract valuable insights. Uncover patterns. Drive informed decisions.",
         key: "data-mining",
-        color: "purple2",
+        color: "purple1",
     },
     {
         icon: Globe,
@@ -129,7 +129,7 @@ export const KPOSERVICES = [{
         detailPath: "/kpo-services/web-research",
         description: "Optimize content, design, and user experience.",
         key: "web-research",
-        color: "purple1",
+        color: "purple2",
     },
     {
         icon: Logs,
@@ -171,7 +171,7 @@ export const RPOSERVICES = [{
         detailPath: "/rpo-services/talent-sourcing",
         description: "Connecting the right talent with the right opportunity.",
         key: "talent-sourcing",
-        color: "purple2",
+        color: "purple1",
     },
     {
         icon: ChartColumnBig,
@@ -179,7 +179,7 @@ export const RPOSERVICES = [{
         detailPath: "/rpo-services/talent-insight",
         description: "Unlocking talent insights for smarter decisions.",
         key: "talent-insight",
-        color: "purple1",
+        color: "purple2",
     },
     {
         icon: UsersRound,
@@ -203,7 +203,7 @@ export const RPOSERVICES = [{
         detailPath: "/rpo-services/talent-pipeline",
         description: "Building a pipeline of top-tier talent for future success.",
         key: "talent-pipeline",
-        color: "purple2",
+        color: "purple1",
     },
     {
         icon: FileText,
@@ -211,7 +211,7 @@ export const RPOSERVICES = [{
         detailPath: "/rpo-services/recruitment-services",
         description: "Connecting the right talent with the right opportunities.",
         key: "recruitment-services",
-        color: "purple1",
+        color: "purple2",
     },
     {
         icon: FilePlus,
