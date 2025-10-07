@@ -99,9 +99,11 @@ const CompanyOverView = () => {
       </Helmet>
       
       {/* <div className="min-h-screen bg-gradient-to-br from-purple-950 via-slate-900 to-amber-950"> */}
-      <div className="min-h-screen bg-gradient-to-br from-purple-950 via-slate-900 to-amber-950">
+      {/* <div className="min-h-screen bg-gradient-to-br from-purple-950 via-slate-900 to-amber-950"> */}
+      <div className="min-h-screen bg-white">
+
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 px-5 overflow-hidden">
+        <section className="relative bg-gray-200 pt-32 pb-20 px-5 overflow-hidden">
           {/* Animated Background Elements */}
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
@@ -110,29 +112,29 @@ const CompanyOverView = () => {
           </div>
 
           <div className="relative z-10 max-w-5xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-fuchsia-700 backdrop-blur-sm border border-white/20 mb-8">
               <Sparkles className="w-4 h-4 text-amber-400" />
-              <span className="text-sm text-white/90 font-medium">Transforming Business Through Innovation</span>
+              <span className="text-sm text-black font-medium">Transforming Business Through Innovation</span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-amber-200 bg-clip-text text-transparent leading-tight">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-[#260433]  leading-tight">
               Company Overview
             </h1>
             
-            <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto mb-12 leading-relaxed">
+            <p className="text-xl md:text-2xl text-black/80 max-w-3xl mx-auto mb-12 leading-relaxed">
               Customized KPO & RPO Solutions for a Future-Ready Workforce
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <NavLink to="/about">
-                <button className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-2xl font-semibold overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] hover:scale-105">
+                <button className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 text-black rounded-2xl font-semibold overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] hover:scale-105">
                   <span className="relative z-10">About Us</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-purple-800 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </button>
               </NavLink>
               
               <NavLink to="/contact">
-                <button className="group px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white rounded-2xl font-semibold transition-all duration-300 hover:bg-white/20 hover:border-white/50 hover:scale-105 flex items-center gap-2">
+                <button className="group px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-black rounded-2xl font-semibold transition-all duration-300 hover:bg-white/20 hover:border-white/50 hover:scale-105 flex items-center gap-2">
                   <svg fill="none" viewBox="0 0 20 20" width="20" height="20">
                     <path
                       stroke="currentColor"
@@ -153,7 +155,7 @@ const CompanyOverView = () => {
         <section className="relative py-24 px-5">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
                 Our Purpose & Direction
               </h2>
               <div className="w-24 h-1.5 bg-gradient-to-r from-purple-500 to-amber-500 mx-auto rounded-full"></div>
@@ -168,17 +170,17 @@ const CompanyOverView = () => {
               >
                 <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-10 transition-all duration-500 hover:bg-white/10 hover:border-purple-500/50 hover:shadow-[0_0_50px_rgba(168,85,247,0.3)] h-full">
                   <div className="absolute -top-6 -left-6 w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center shadow-xl transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
-                    <Target className="w-10 h-10 text-white" />
+                    <Target className="w-10 h-10 text-black" />
                   </div>
                   
                   <div className="mt-8">
                     <div className="flex items-center gap-3 mb-3">
-                      <h3 className="text-3xl font-bold text-white">Our Mission</h3>
+                      <h3 className="text-3xl font-bold text-black">Our Mission</h3>
                     </div>
                     <p className="text-amber-400 text-sm font-medium mb-6">
                       Empowering businesses with knowledge, talent, and global excellence.
                     </p>
-                    <p className="text-white/80 leading-relaxed text-base">
+                    <p className="text-black/80 leading-relaxed text-base">
                       Our mission is to deliver exceptional RPO and KPO services that empower businesses to unlock their full potential. By combining industry expertise, innovative solutions, and cutting-edge technology, we aim to streamline recruitment and knowledge processes, driving efficiency, scalability, and long-term success for our clients. We are committed to fostering strong partnerships, delivering personalized support, and continuously improving our services to exceed client expectations.
                     </p>
                   </div>
@@ -195,17 +197,17 @@ const CompanyOverView = () => {
               >
                 <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-10 transition-all duration-500 hover:bg-white/10 hover:border-amber-500/50 hover:shadow-[0_0_50px_rgba(251,191,36,0.3)] h-full">
                   <div className="absolute -top-6 -left-6 w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-xl transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
-                    <Sparkles className="w-10 h-10 text-white" />
+                    <Sparkles className="w-10 h-10 text-black" />
                   </div>
                   
                   <div className="mt-8">
                     <div className="flex items-center gap-3 mb-3">
-                      <h3 className="text-3xl font-bold text-white">Our Vision</h3>
+                      <h3 className="text-3xl font-bold text-black">Our Vision</h3>
                     </div>
                     <p className="text-purple-400 text-sm font-medium mb-6">
                       Transforming businesses with cutting-edge insights and world-class talent solutions.
                     </p>
-                    <p className="text-white/80 leading-relaxed text-base">
+                    <p className="text-black/80 leading-relaxed text-base">
                       At Evron Research, we aim to reshape the future of talent acquisition and knowledge outsourcing. Our vision is to deliver transformative RPO and KPO solutions that foster innovation, empower organizations, and drive sustainable growth. By leveraging data, technology, and expertise, we seek to create limitless opportunities for our clients, positioning them for long-term success in a rapidly evolving global market.
                     </p>
                   </div>
@@ -221,10 +223,10 @@ const CompanyOverView = () => {
         <section className="relative py-24 px-5 bg-black/20">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
                 Our Core Values
               </h2>
-              <p className="text-xl text-white/70 max-w-2xl mx-auto">
+              <p className="text-xl text-black/70 max-w-2xl mx-auto">
                 The principles that guide everything we do
               </p>
             </div>
@@ -247,14 +249,14 @@ const CompanyOverView = () => {
                       
                       <div className="relative z-10">
                         <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${value.gradient} mb-6 shadow-lg group-hover:shadow-2xl transition-shadow`}>
-                          <Icon className="w-8 h-8 text-white" />
+                          <Icon className="w-8 h-8 text-black" />
                         </div>
                         
-                        <h3 className="text-2xl font-bold text-white mb-4">
+                        <h3 className="text-2xl font-bold text-black mb-4">
                           {value.title}
                         </h3>
                         
-                        <p className="text-white/70 leading-relaxed">
+                        <p className="text-black/70 leading-relaxed">
                           {value.description}
                         </p>
                       </div>
@@ -270,11 +272,11 @@ const CompanyOverView = () => {
             {/* CTA Section */}
             <div className="mt-20 text-center">
               <div className="inline-block bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-10">
-                <p className="text-xl text-white/90 mb-6">
+                <p className="text-xl text-black/90 mb-6">
                   Ready to transform your business?
                 </p>
                 <NavLink to="/contact">
-                  <button className="group relative px-10 py-5 bg-gradient-to-r from-purple-600 via-purple-700 to-amber-600 text-white rounded-2xl font-bold text-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_rgba(168,85,247,0.5)] hover:scale-105">
+                  <button className="group relative px-10 py-5 bg-gradient-to-r from-purple-600 via-purple-700 to-amber-600 text-black rounded-2xl font-bold text-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_rgba(168,85,247,0.5)] hover:scale-105">
                     <span className="relative z-10 flex items-center gap-2">
                       Let's Discuss Your Project
                       <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -301,14 +303,14 @@ const CompanyOverView = () => {
                     className="group relative bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8 transition-all duration-500 hover:bg-white/10 hover:border-white/30 hover:transform hover:scale-105"
                   >
                     <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${stat.gradient} mb-4`}>
-                      <Icon className="w-6 h-6 text-white" />
+                      <Icon className="w-6 h-6 text-black" />
                     </div>
                     
-                    <div className="text-4xl font-bold text-white mb-2">
+                    <div className="text-4xl font-bold text-black mb-2">
                       {stat.value}
                     </div>
                     
-                    <div className="text-white/70 font-medium">
+                    <div className="text-black/70 font-medium">
                       {stat.label}
                     </div>
 

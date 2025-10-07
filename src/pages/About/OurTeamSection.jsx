@@ -65,7 +65,7 @@ export default function OurTeamSection() {
           </motion.div>
 
           {/* Right Cards */}
-          <div className="flex flex-wrap justify-center gap-8 w-full lg:w-1/2">
+          <div className="flex flex-wrap justify-end   gap-8 w-full lg:w-1/2">
             {aboutCards.map((card, i) => (
               <motion.div
                 whileHover={{ y: -6 }}
