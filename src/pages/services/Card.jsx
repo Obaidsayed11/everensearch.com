@@ -26,7 +26,7 @@ export const ServiceCard = ({
 
   const cardthemes = {
     purple1: "text-fuchsia-800 bg-purple-200",
-    purple2: "text-purple-200 bg-fuchsia-800 bg-opacity-10",
+    purple2: "text-purple-200 bg-fuchsia-800",
   };
 
   const [isOpen, setIsOpen] = useState(false);

@@ -156,12 +156,18 @@ useEffect(() => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
         {/* Left Sticky Content */}
         <div className="lg:sticky lg:top-32 lg:self-start">
-          <div className="space-y-6 p-8 rounded-3xl bg-blue-100 border  border-purple-100 min-h-[600px] flex flex-col justify-center">
-            <span className="bg-[#260433] text-white px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
+          {/*  <div className="space-y-6 p-8 rounded-3xl bg-purple-100 border shadow-lg  border-purple-100 min-h-[600px] flex flex-col justify-center"> */}
+
+          {/*  <div className="space-y-6 p-8 rounded-3xl bg-purple-100 border border-purple-100 min-h-[600px] flex flex-col justify-center shadow-[0_0_25px_rgba(147,51,234,0.3)]">
+            */}
+
+            <div className="space-y-6 p-8 rounded-3xl bg-purple-100 border border-purple-100 min-h-[600px] flex flex-col justify-center shadow-[0_4px_20px_rgba(147,51,234,0.15),0_0_10px_rgba(147,51,234,0.1)]">
+
+            <span className="bg-[#260433] w-fit text-white px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
               {activeContent.subtitle}
             </span>
 
-            <h2 className={`text-4xl lg:text-5xl font-bold bg-clip-text text-transparent ${
+            <h2 className={`text-4xl lg:text-5xl font-bold  bg-clip-text text-transparent ${
               activeTab === "kpo" ? "bg-[linear-gradient(to_right,_#093028,_#6CC686)]" : "bg-[linear-gradient(to_right,_#3e4044,_#2d78f1)]"
               }`}
               >
