@@ -18,13 +18,13 @@ function ServiceDetail() {
 <Helmet>
   <title>{`Service Detail - ${serviceId} - Evren Research`}</title>
   <meta name="description" content={`Details of the ${serviceId} service offered by Evren Research.`} />
-  <link rel="canonical" href={`https://www.Evrenresearch.com/kpo-services/${serviceId}`} />
+  <link rel="canonical" href={`https://www.evrenresearch.com/kpo-services/${serviceId}`} />
   <script type="application/ld+json">
     {`
       {
         "@context": "https://schema.org",
         "@type": "Service",
-        "url": "https://www.Evrenresearch.com/kpo-services/${serviceId}",
+        "url": "https://www.evrenresearch.com/kpo-services/${serviceId}",
         "name": "Service Detail - ${serviceId}",
         "description": "Details of the ${serviceId} service offered by Evren Research."
       }

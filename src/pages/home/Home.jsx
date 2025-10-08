@@ -18,13 +18,13 @@ const Home = () => {
           name="description"
           content="Evren Research provides innovative data analytics and research solutions to empower businesses. Learn more about our services and expertise."
         />
-        <link rel="canonical" href="https://www.Evrenresearch.com/" />
+        <link rel="canonical" href="https://www.evrenresearch.com/" />
         <script type="application/ld+json">
           {`
       {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "url": "https://www.Evrenresearch.com/",
+        "url": "https://www.evrenresearch.com/",
         "name": "Home - Evren Research",
         "description": "Home page of Evren Research, providing innovative data analytics and research solutions."
       }

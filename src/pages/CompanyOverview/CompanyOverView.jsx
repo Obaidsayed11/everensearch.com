@@ -84,13 +84,13 @@ const CompanyOverView = () => {
       <Helmet>
         <title>Company Overview - Evren Research</title>
         <meta name="description" content="Learn more about Evren Research, our mission, vision, and the innovative research solutions we provide to empower businesses." />
-        <link rel="canonical" href="https://www.Evrenresearch.com/company-overview" />
+        <link rel="canonical" href="https://www.evrenresearch.com/company-overview" />
         <script type="application/ld+json">
           {`
             {
               "@context": "https://schema.org",
               "@type": "Organization",
-              "url": "https://www.Evrenresearch.com/company-overview",
+              "url": "https://www.evrenresearch.com/company-overview",
               "name": "Evren Research",
               "description": "Evren Research provides innovative data analytics and research solutions to empower businesses."
             }

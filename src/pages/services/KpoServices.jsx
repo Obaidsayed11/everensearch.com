@@ -71,14 +71,14 @@ const ExpandableCards = () => {
         />
         <link
           rel="canonical"
-          href="https://www.Evrenresearch.com/kpo-services"
+          href="https://www.evrenresearch.com/kpo-services"
         />
         <script type="application/ld+json">
           {`
                 {
                   "@context": "https://schema.org",
                   "@type": "WebPage",
-                  "url": "https://www.Evrenresearch.com/rpo-services",
+                  "url": "https://www.evrenresearch.com/rpo-services",
                   "name": "RPO Services - Evren Research",
                   "description": "Explore Evren Research's KPO services to streamline your recruitment processes."
                 }

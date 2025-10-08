@@ -103,12 +103,12 @@ const Contact = () => {
   
 
   const contactInfo = [
-    {
-      icon: MapPin,
-      title: "Visit Us",
-      content: "Navi Mumbai - Kopar Khairane",
-      gradient: "from-purple-500 to-pink-500",
-    },
+    // {
+    //   icon: MapPin,
+    //   title: "Visit Us",
+    //   content: "Navi Mumbai - Kopar Khairane",
+    //   gradient: "from-purple-500 to-pink-500",
+    // },
     {
       icon: Phone,
       title: "Call Us",
@@ -118,7 +118,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email Us",
-      content: "Aslan@Evrenresearch.com",
+      content: "aslan@evrenresearch.com",
       gradient: "from-orange-500 to-red-500",
     },
   ];

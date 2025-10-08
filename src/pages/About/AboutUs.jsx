@@ -11,13 +11,13 @@ export default function AboutPage() {
           name="description"
           content="Learn more about Evren Research and how we help businesses grow with innovative research solutions."
         />
-        <link rel="canonical" href="https://www.Evrenresearch.com/about" />
+        <link rel="canonical" href="https://www.evrenresearch.com/about" />
         <script type="application/ld+json">
           {`
             {
               "@context": "https://schema.org",
               "@type": "WebPage",
-              "url": "https://www.Evrenresearch.com/about",
+              "url": "https://www.evrenresearch.com/about",
               "name": "About Us - Evren Research",
               "description": "Learn more about Evren Research and how we help businesses grow with innovative research solutions."
             }

@@ -6,13 +6,13 @@ const PrivacyPolicy = () => {
     <Helmet>
         <title>Privacy Policy - Evren Research</title>
         <meta name="description" content="Read Evren Research's privacy policy to understand how we handle your data." />
-        <link rel="canonical" href="https://www.Evrenresearch.com/privacy-policy " />
+        <link rel="canonical" href="https://www.evrenresearch.com/privacy-policy " />
         <script type="application/ld+json">
           {`
             {
               "@context": "https://schema.org",
               "@type": "WebPage",
-              "url": "https://www.Evrenresearch.com/privacy-policy",
+              "url": "https://www.evrenresearch.com/privacy-policy",
               "name": "Privacy Policy - Evren Research",
               "description": "Read Evren Research's privacy policy to understand how we handle your data."
             }
@@ -143,10 +143,10 @@ const PrivacyPolicy = () => {
             <p>
               Email:{" "}
               <a
-                href="mailto:your-email@example.com"
+                href="mailto:aslan@evrenresearch.com"
                 className="text-blue-600 hover:underline"
               >
-                aslan@Evrenresearch.com
+                aslan@evrenresearch.com
               </a>
             </p>
             <p>
@@ -193,7 +193,7 @@ const PrivacyPolicy = () => {
 
         <h2 className="text-xl font-semibold mb-4 text-[#260433]">For permissions or further inquiries, contact:</h2>
         <p className="text-base text-gray-700">
-        aslan@Evrenresearch.com <br />
+        aslan@evrenresearch.com <br />
         85, Sector 1, Millenium Business Park,
 
 MIDC Industrial Area, Kopar Khairane, Navi Mumbai

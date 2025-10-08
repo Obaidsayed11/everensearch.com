@@ -70,14 +70,14 @@ const RpoServices = () => {
         />
         <link
           rel="canonical"
-          href="https://www.Evrenresearch.com/rpo-services"
+          href="https://www.evrenresearch.com/rpo-services"
         />
         <script type="application/ld+json">
           {`
           {
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "url": "https://www.Evrenresearch.com/rpo-services",
+            "url": "https://www.evrenresearch.com/rpo-services",
             "name": "RPO Services - Evren Research",
             "description": "Explore Evren Research's RPO services to streamline your recruitment processes."
           }

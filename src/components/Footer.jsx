@@ -34,7 +34,7 @@ const Footer = () => {
             <ul className="mt-6 flex space-x-2 text-white">
               <li>
                 <a
-                  href=" https://wa.me/919082704714"
+                  href=" https://wa.me/9967810464"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -73,7 +73,7 @@ const Footer = () => {
 
               <li>
                 <a
-                  href="https://www.linkedin.com/company/Evren-research-pvt-ltd/"
+                  href="https://www.linkedin.com/company/evren-research-database/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -97,7 +97,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://www.instagram.com/Evren.research/?hl=en"
+                  href="https://www.instagram.com/evren.research/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

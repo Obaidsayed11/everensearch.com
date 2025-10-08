@@ -99,7 +99,7 @@ function WhyUs() {
           name="description"
           content="Learn why Evren Research is the best choice for your business research and data analytics needs."
         />
-        <link rel="canonical" href="https://www.Evrenresearch.com/why-us" />
+        <link rel="canonical" href="https://www.evrenresearch.com/why-us" />
       </Helmet>
 
       <section className="relative  px-6 md:px-12 py-16 md:py-24 sm:py-24 ">

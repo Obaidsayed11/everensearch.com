@@ -6,9 +6,9 @@ export default function OurTeamSection() {
   const aboutCards = [
     {
       name: "Aslan Shaikh",
-      role: "Head of Operations",
-      number: "+91 12345-67890",
-      linkedin: "https://www.linkedin.com/in/aslan",
+      role: "Founder and Head of Business Development",
+      number: "+91 99678-10464",
+      linkedin: "https://www.linkedin.com/in/aslan-shaikh-179925230?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
       color: "purple",
       image: "https://via.placeholder.com/100", // replace with real photo
     },
