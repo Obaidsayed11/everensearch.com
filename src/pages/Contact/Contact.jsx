@@ -10,9 +10,12 @@ import {
   Clock,
   Users,
 } from "lucide-react";
+import emailjs from '@emailjs/browser';
+// import { Send } from 'lucide-react'
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
+
+ const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
@@ -20,30 +23,84 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const [previewUrl, setPreviewUrl] = useState("");
 
+ emailjs.init("uH-pGiD9_znq1JrnF"); // Replace with your actual public key
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+
+
+  const sendToGoogleSheets = async (data) => {
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbwoOrc2SfnHvURqwiJDuX-tIIVJCidKiLNk1I4sQRm8UT3z3r5XYnc8bnjWDdaZjQtZKA/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          message: data.message,
+          timestamp: new Date().toISOString()
+        })
+      });
+      return true;
+    } catch (err) {
+      console.error('Google Sheets error:', err);
+      return false;
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setError("");
+    setError('');
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-      setIsSubmitted(true);
-      setFormData({ name: "", email: "", message: "" });
+      // Send email via EmailJS
+      const emailResult = await emailjs.send(
+        'service_e50othq',      // Replace with your Service ID
+        'template_myjejul',     // Replace with your Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_name: 'Evron Research Team',
+        }
+      );
 
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 5000);
+      // Send to Google Sheets
+      await sendToGoogleSheets(formData);
+
+      if (emailResult.status === 200) {
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', message: '' });
+        
+        // Reset success message after 5 seconds
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 5000);
+      }
     } catch (err) {
-      setError("Failed to send message. Please try again later.");
+      console.error('Error:', err);
+      setError('Failed to send message. Please try again later.');
     } finally {
       setIsSubmitting(false);
     }
   };
+
+  // if (isSubmitted) {
+  //   return (
+  //     <div className="bg-green-900/20 text-green-400 p-6 rounded-lg border border-green-800 text-center">
+  //       <h3 className="text-xl font-semibold mb-2">Thank You!</h3>
+  //       <p>Your message has been sent successfully. We'll get back to you soon.</p>
+  //     </div>
+  //   );
+  // }
+  
 
   const contactInfo = [
     {
