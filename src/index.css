@@ -122,3 +122,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
+}
