@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, useParams } from "react-router-dom";
 // import image from  "../../image/Image.jpg"
-import { serviceDetails } from "../../lib/utils2";
+// import { serviceDetails } from "../../lib/utils2";
 import { Helmet } from 'react-helmet';
 import { CircleCheck, ShieldCheck } from "lucide-react";
 
