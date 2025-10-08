@@ -4,6 +4,8 @@ import Footer from "./components/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import ScrollToTop from "./ScrollToTop";
+
 
 const App = () => {
   // Initialize AOS library
@@ -15,6 +17,7 @@ const App = () => {
   }, []);
   return (
     <div className="h-screen w-full">
+    <ScrollToTop />
       <Header />
       <Outlet />
       <Footer />
