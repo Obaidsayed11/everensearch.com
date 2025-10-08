@@ -1,4 +1,4 @@
-// import { Boxes } from "../../components/ui/background-boxes";
+import { Boxes } from "../../components/ui/background-boxes";
 import { cn } from "../../utils/cn";
 
 export default function AboutUsSection() {
@@ -6,7 +6,7 @@ export default function AboutUsSection() {
     <div className="relative w-full h-[32rem] flex items-center justify-center overflow-hidden bg-slate-900">
       {/* 🔹 Animated Boxes Background (Hover Works) */}
       <div className="absolute inset-0 z-0 pointer-events-auto">
-        {/* Boxes /> */}
+       < Boxes />
       </div>
 
       {/* 🔹 Light Overlay (keeps text readable but allows hover through) */}
