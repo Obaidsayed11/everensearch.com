@@ -217,70 +217,77 @@ export function WhatWeDoSection() {
       </div>
 
       {/* Expanded Card Modal */}
-      <AnimatePresence mode="wait">
-        {selectedCard && (
-          <div className="fixed inset-0 grid place-items-center z-[100] p-4 bg-black/30 backdrop-blur-sm">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-              className="relative w-full max-w-4xl max-h-[90vh] flex flex-col md:flex-row bg-white rounded-2xl overflow-hidden shadow-2xl"
-            >
-              <button
-                className="absolute top-3 right-3 flex items-center justify-center bg-gray-100 rounded-full h-9 w-9 shadow-md hover:bg-gray-200 transition-colors z-20"
-                onClick={() => setSelectedCard(null)}
-              >
-                <CloseIcon />
-              </button>
+     <AnimatePresence mode="wait">
+  {selectedCard && (
+    <div className="fixed inset-0 flex items-center justify-center z-[100] p-3 sm:p-4 bg-black/30 backdrop-blur-sm overflow-y-auto">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.95, y: 20 }}
+        transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+        className="relative w-full max-w-[92vw] sm:max-w-md md:max-w-2xl lg:max-w-3xl my-4 bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl max-h-[80vh] sm:max-h-[75vh] md:max-h-[70vh] flex flex-col"
+      >
+        {/* Close Button */}
+        <button
+          className="absolute top-2 right-2 flex items-center justify-center bg-white rounded-full h-7 w-7 sm:h-8 sm:w-8 shadow-lg hover:bg-gray-100 transition-colors z-20"
+          onClick={() => setSelectedCard(null)}
+        >
+          <CloseIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+        </button>
 
-              <div
-                className={`w-full md:w-1/2 flex items-center justify-center bg-gradient-to-br ${colorMap[selectedCard.color]} p-8`}
-              >
-                <selectedCard.icon className="w-28 h-28 md:w-36 md:h-36 text-fuchsia-800" />
-              </div>
-
-              <div className="w-full md:w-1/2 overflow-y-auto p-6 md:p-8 flex flex-col justify-between">
-  <div>
-    {(() => {
-      const serviceDetails =
-        activeTab === "kpo" ? serviceDetailsKPO : serviceDetailsRPO;
-
-      return (
-        <>
-          <h3 className="font-bold text-xl md:text-2xl text-[#260433] mb-3">
-            {serviceDetails[selectedCard.key]?.title || selectedCard.title}
-          </h3>
-          <p className="text-neutral-600 mb-4 text-sm md:text-base leading-relaxed">
-            {serviceDetails[selectedCard.key]?.details || selectedCard.description}
-          </p>
-          <ul className="text-neutral-600 text-sm md:text-base list-none space-y-3">
-            {serviceDetails[selectedCard.key]?.points?.map((p, idx) => (
-              <li key={idx} className="flex items-start gap-2">
-                <span className="mt-1 text-green-600">✔</span>
-                <span>{p.content}</span>
-              </li>
-            ))}
-          </ul>
-        </>
-      );
-    })()}
-  </div>
-
-  <div className="mt-6">
-    <Button
-      className="h-10 w-full max-w-[200px] bg-[#260433] hover:bg-fuchsia-950 px-4 py-2 text-sm font-medium sm:w-auto text-white"
-      radius="full"
-    >
-      Contact Us
-    </Button>
-  </div>
-</div>
-
-            </motion.div>
+        {/* Compact Layout for All Devices */}
+        <div className="flex flex-col sm:flex-row overflow-y-auto max-h-[80vh] sm:max-h-[75vh] md:max-h-[70vh]">
+          {/* Icon Section - Compact for all sizes */}
+          <div
+            className={`w-full sm:w-32 md:w-40 flex-shrink-0 flex items-center justify-center bg-gradient-to-br ${
+              colorMap[selectedCard.color]
+            } py-6 sm:py-8 px-4`}
+          >
+            <selectedCard.icon className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24" />
           </div>
-        )}
-      </AnimatePresence>
+
+          {/* Content Section - Scrollable */}
+          <div className="flex-1 p-4 sm:p-5 md:p-6 overflow-y-auto">
+            {(() => {
+              const serviceDetails =
+                activeTab === "kpo" ? serviceDetailsKPO : serviceDetailsRPO;
+
+              return (
+                <>
+                  <h3 className="font-bold text-sm sm:text-base md:text-lg text-[#260433] mb-2 pr-6">
+                    {serviceDetails[selectedCard.key]?.title || selectedCard.title}
+                  </h3>
+                  
+                  <p className="text-neutral-600 mb-3 text-xs sm:text-sm leading-relaxed line-clamp-3 sm:line-clamp-4">
+                    {serviceDetails[selectedCard.key]?.details || selectedCard.description}
+                  </p>
+                  
+                  <ul className="text-neutral-600 text-xs sm:text-sm list-none space-y-1.5 sm:space-y-2 mb-3 sm:mb-4">
+                    {serviceDetails[selectedCard.key]?.points?.map((p, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <span className="mt-0.5 text-green-600 text-xs sm:text-sm flex-shrink-0">✔</span>
+                        <span className="leading-snug">{p.content}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              );
+            })()}
+
+            <button
+              className="w-full sm:w-auto bg-[#260433] hover:bg-fuchsia-950 px-5 sm:px-6 py-2 text-xs sm:text-sm font-medium text-white rounded-full transition-colors"
+              onClick={() => {
+                // Contact action
+              }}
+            >
+              Contact Us
+            </button>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  )}
+</AnimatePresence>
     </div>
   );
 }

@@ -102,11 +102,11 @@ function WhyUs() {
         <link rel="canonical" href="https://www.Evrenresearch.com/why-us" />
       </Helmet>
 
-      <section className="relative  px-6 md:px-12 py-16 md:py-24">
+      <section className="relative  px-6 md:px-12 py-16 md:py-24 sm:py-24 ">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Left Section */}
           <div data-aos="fade-right" data-aos-duration="1200">
-            <h1 className="text-3xl md:text-4xl font-bold text-[#260433] mb-8">
+            <h1 className="text-3xl md:text-4xl font-bold text-[#260433] mb-8 ">
               Our Strategic Approach
             </h1>
             <p className="text-gray-700 leading-relaxed mb-10">
