@@ -59,7 +59,8 @@ export const ServiceCard = ({
           </div>
         </div>
 
-        <div className="border-t border-gray-200 flex justify-end pt-2">
+        {/* 
+          <div className="border-t border-gray-200 flex justify-end pt-2">
           <Tooltip
             content="Know More"
             color="foreground"
@@ -72,6 +73,7 @@ export const ServiceCard = ({
             </button>
           </Tooltip>
         </div>
+         */}
       </div>
     </Link>
   );

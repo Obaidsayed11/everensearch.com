@@ -114,7 +114,7 @@ const CompanyOverView = () => {
           </div>
 
           <div className="relative z-10 max-w-5xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-fuchsia-700 backdrop-blur-sm border border-white/20 mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-fuchsia-950 backdrop-blur-sm border border-white/20 mb-8">
               <Sparkles className="w-4 h-4 text-amber-400" />
               <span className="text-sm text-white font-medium">Transforming Business Through Innovation</span>
             </div>
@@ -170,8 +170,8 @@ const CompanyOverView = () => {
                 className="group relative"
               >
                 <div className="relative bg-purple-50 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-10 transition-all duration-500 hover:bg-white hover:shadow-md h-full">
-                  <div className="absolute -top-6 -left-6 w-20 h-20 bg-fuchsia-700 rounded-2xl flex items-center justify-center shadow-xl transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
-                    <Target className="w-10 h-10 text-purple-200" />
+                  <div className="absolute -top-4 -left-4 md:-top-6 md:-left-6 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-fuchsia-700 rounded-2xl flex items-center justify-center shadow-xl transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
+                    <Target className="w-8 h-8 text-purple-200" />
                   </div>
                   
                   <div className="mt-8">
@@ -197,8 +197,8 @@ const CompanyOverView = () => {
                 className="group relative"
               >
                 <div className="relative bg-purple-50 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-10 transition-all duration-500 hover:bg-white hover:shadow=lg h-full">
-                  <div className="absolute -top-6 -left-6 w-20 h-20 bg-fuchsia-800 rounded-2xl flex items-center justify-center shadow-xl transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
-                    <Sparkles className="w-10 h-10 text-purple-200" />
+                  <div className="absolute -top-4 -left-4 md:-top-6 md:-left-6 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-fuchsia-800 rounded-2xl flex items-center justify-center shadow-xl transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
+                    <Sparkles className="w-8 h-8 text-purple-200" />
                   </div>
                   
                   <div className="mt-8">

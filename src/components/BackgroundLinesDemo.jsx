@@ -25,7 +25,7 @@ export function BackgroundLinesDemo() {
   return (
     (<Vortex className="flex items-center h-screen justify-center w-full flex-col px-4 overflow-hidden" >
       <h2
-        className="bg-clip-text text-white text-center text-3xl md:text-5xl lg:text-7xl font-sans py-2 md:py-5 p-1 relative z-20 font-bold tracking-tight">
+        className="bg-clip-text text-white text-center text-3xl md:text-5xl lg:text-7xl font-sans py-2 md:py-2 p-1 relative z-20 font-bold tracking-tight">
         The Premier Hub <br /> For Cutting-Edge Research.  
       </h2>
       <p
