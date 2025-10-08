@@ -12,7 +12,7 @@ export const WhatWeDoHeader = () => {
 export const AboutUsHeader = () => {
   return (
     <div className="flex items-center gap-2 md:gap-3">
-      {/* <img src={smallScreen} width={30} alt="Evron research" /> */}
+      {/* <img src={smallScreen} width={30} alt="Evren research" /> */}
       <span className="text-xl md:text-2xl text-warning-500 font-semibold">
         |
       </span>

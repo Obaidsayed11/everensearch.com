@@ -26,11 +26,11 @@ export function BackgroundLinesDemo() {
     (<Vortex className="flex items-center h-screen justify-center w-full flex-col px-4 overflow-hidden" >
       <h2
         className="bg-clip-text text-white text-center text-3xl md:text-5xl lg:text-7xl font-sans py-2 md:py-5 p-1 relative z-20 font-bold tracking-tight">
-        The Ultimate Destination <br /> Of Research.  
+        The Premier Hub <br /> For Cutting-Edge Research.  
       </h2>
       <p
         className="max-w-xl mx-auto text-sm md:text-lg text-white text-center">
-       We transform ideas into insights and empower businesses with innovative research solutions. With precision, creativity, and excellence, we’re here to drive discovery and success.
+      We turn ideas into actionable insights, empowering businesses with innovative research solutions. With precision, creativity, and expertise, we drive discovery and deliver success.
       </p>
     </Vortex>)
   );

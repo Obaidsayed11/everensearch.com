@@ -18,7 +18,7 @@ export default function AboutUsSection() {
           About Us
         </p>
         <h1 className="font-bold text-3xl md:text-5xl text-white mb-4">
-          Evron{" "}
+          Evren{" "}
           <span className="text-fuchsia-500">
             Research
           </span>

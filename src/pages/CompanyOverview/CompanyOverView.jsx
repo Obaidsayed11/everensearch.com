@@ -82,17 +82,17 @@ const CompanyOverView = () => {
   return (
     <>
       <Helmet>
-        <title>Company Overview - Evron Research</title>
-        <meta name="description" content="Learn more about Evron Research, our mission, vision, and the innovative research solutions we provide to empower businesses." />
-        <link rel="canonical" href="https://www.Evronresearch.com/company-overview" />
+        <title>Company Overview - Evren Research</title>
+        <meta name="description" content="Learn more about Evren Research, our mission, vision, and the innovative research solutions we provide to empower businesses." />
+        <link rel="canonical" href="https://www.Evrenresearch.com/company-overview" />
         <script type="application/ld+json">
           {`
             {
               "@context": "https://schema.org",
               "@type": "Organization",
-              "url": "https://www.Evronresearch.com/company-overview",
-              "name": "Evron Research",
-              "description": "Evron Research provides innovative data analytics and research solutions to empower businesses."
+              "url": "https://www.Evrenresearch.com/company-overview",
+              "name": "Evren Research",
+              "description": "Evren Research provides innovative data analytics and research solutions to empower businesses."
             }
           `}
         </script>
@@ -209,7 +209,7 @@ const CompanyOverView = () => {
                       Transforming businesses with cutting-edge insights and world-class talent solutions.
                     </p>
                     <p className="text-black leading-relaxed text-base">
-                      At Evron Research, we aim to reshape the future of talent acquisition and knowledge outsourcing. Our vision is to deliver transformative RPO and KPO solutions that foster innovation, empower organizations, and drive sustainable growth. By leveraging data, technology, and expertise, we seek to create limitless opportunities for our clients, positioning them for long-term success in a rapidly evolving global market.
+                      At Evren Research, we aim to reshape the future of talent acquisition and knowledge outsourcing. Our vision is to deliver transformative RPO and KPO solutions that foster innovation, empower organizations, and drive sustainable growth. By leveraging data, technology, and expertise, we seek to create limitless opportunities for our clients, positioning them for long-term success in a rapidly evolving global market.
                     </p>
                   </div>
                   

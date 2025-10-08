@@ -55,13 +55,13 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Call Us",
-      content: "+91 12345-67890",
+      content: "+919967810464",
       gradient: "from-blue-500 to-cyan-500",
     },
     {
       icon: Mail,
       title: "Email Us",
-      content: "Aslan@Evronresearch.com",
+      content: "Aslan@Evrenresearch.com",
       gradient: "from-orange-500 to-red-500",
     },
   ];
@@ -122,7 +122,7 @@ const Contact = () => {
           <div className="flex flex-wrap justify-center gap-8 md:gap-16">
             {features.map((feature, idx) => (
               <div key={idx} className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-fuchsia-800 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-fuchsia-800 flex items-center justify-center ">
                   <feature.icon className="w-5 h-5 text-purple-200" />
                 </div>
                 <span className="font-semibold text-gray-700">{feature.text}</span>
@@ -147,28 +147,52 @@ const Contact = () => {
                     Choose your preferred way to reach us
                   </p>
 
-                  <div className="space-y-4">
-                    {contactInfo.map((item, idx) => (
-                      <div
-                        key={idx}
-                        className="group relative overflow-hidden bg-gradient-to-br from-gray-50 to-white rounded-2xl p-5 md:p-6 hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-purple-200"
-                      >
-                        <div className="flex items-start gap-4">
-                          <div
-                            className={`w-12 h-12 md:w-14 md:h-14 rounded-xl bg-fuchsia-800 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}
-                          >
-                            <item.icon className="w-6 h-6 md:w-7 md:h-7 text-purple-200" />
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <h3 className="font-bold text-base md:text-lg text-gray-900 mb-1">
-                              {item.title}
-                            </h3>
-                            <p className="text-sm md:text-base text-gray-600 break-words">{item.content}</p>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+                 <div className="space-y-4">
+  {contactInfo.map((item, idx) => {
+    const isCall = item.title.toLowerCase().includes("call");
+    const isEmail = item.title.toLowerCase().includes("email");
+    
+    // Determine href
+    const href = isCall
+      ? `tel:${item.content.replace(/\s+/g, "")}`
+      : isEmail
+      ? `mailto:${item.content}`
+      : null;
+
+    return (
+      <div
+        key={idx}
+        className="group relative overflow-hidden bg-gradient-to-br from-gray-50 to-white rounded-2xl p-5 md:p-6 hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-purple-200"
+      >
+        <div className="flex items-start gap-4">
+          <div
+            className={`w-12 h-12 md:w-14 md:h-14 rounded-xl bg-fuchsia-800 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}
+          >
+            <item.icon className="w-6 h-6 md:w-7 md:h-7 text-purple-200" />
+          </div>
+          <div className="flex-1 min-w-0">
+            <h3 className="font-bold text-base md:text-lg text-gray-900 mb-1">
+              {item.title}
+            </h3>
+            {href ? (
+              <a
+                href={href}
+                className="text-sm md:text-base text-gray-600 break-words hover:text-purple-800 transition-colors duration-300"
+              >
+                {item.content}
+              </a>
+            ) : (
+              <p className="text-sm md:text-base text-gray-600 break-words">
+                {item.content}
+              </p>
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  })}
+</div>
+
                 </div>
 
                 {/* CTA Card */}

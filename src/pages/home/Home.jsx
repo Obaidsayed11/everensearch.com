@@ -12,21 +12,21 @@ const Home = () => {
     <>
       <Helmet>
         <title>
-          Evron Research | Innovative Data Analytics and Research Solutions
+          Evren Research | Innovative Data Analytics and Research Solutions
         </title>
         <meta
           name="description"
-          content="Evron Research provides innovative data analytics and research solutions to empower businesses. Learn more about our services and expertise."
+          content="Evren Research provides innovative data analytics and research solutions to empower businesses. Learn more about our services and expertise."
         />
-        <link rel="canonical" href="https://www.Evronresearch.com/" />
+        <link rel="canonical" href="https://www.Evrenresearch.com/" />
         <script type="application/ld+json">
           {`
       {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "url": "https://www.Evronresearch.com/",
-        "name": "Home - Evron Research",
-        "description": "Home page of Evron Research, providing innovative data analytics and research solutions."
+        "url": "https://www.Evrenresearch.com/",
+        "name": "Home - Evren Research",
+        "description": "Home page of Evren Research, providing innovative data analytics and research solutions."
       }
     `}
         </script>
@@ -35,7 +35,7 @@ const Home = () => {
       <WhatWeDoSection />
       <AboutUsSection />
       <IndustryFocused />
-      {/* <WhyChooseUs /> */}
+      <WhyChooseUs />
       <Stats />
       {/* <Testimonial/> */}
     </>

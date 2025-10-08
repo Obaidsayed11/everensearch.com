@@ -6,7 +6,7 @@ import { Button } from "@nextui-org/react";
 import { Plus } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { KPOSERVICES, RPOSERVICES } from "../lib/utils";
-import { serviceDetailsKPO } from "../lib/utils2";
+import { serviceDetailsKPO, serviceDetailsRPO } from "../lib/utils2";
 
 const colorMap = {
   purple1: "text-fuchsia-800 bg-purple-200",
@@ -121,7 +121,7 @@ export function WhatWeDoSection() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
         {/* LEFT FIXED PANEL */}
         <div className="lg:sticky lg:top-32 lg:self-start">
           <div className="space-y-6 p-8 rounded-3xl bg-purple-100 border border-purple-100 min-h-[600px] flex flex-col justify-center shadow-[0_4px_20px_rgba(147,51,234,0.15)]">
@@ -167,7 +167,7 @@ export function WhatWeDoSection() {
         {/* RIGHT PANEL - Expandable Cards */}
         <div
           ref={rightPanelRef}
-          className="space-y-6 max-h-[600px] overflow-y-auto pr-2 rounded-2xl scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent hover:scrollbar-thumb-gray-400 "
+          className="space-y-6 max-h-[600px] overflow-y-auto pr-2 rounded-2xl scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent hover:scrollbar-thumb-gray-400"
         >
           {activeServices.map((card, index) => {
             const Icon = card.icon;
@@ -177,7 +177,7 @@ export function WhatWeDoSection() {
                 ref={(el) => (cardsRef.current[index] = el)}
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.2 }}
-                className={`p-6 m-4 flex flex-col md:flex-row justify-between items-center bg-white hover:shadow-lg rounded-xl cursor-pointer transition-shadow duration-200  ${
+                className={`p-6 flex flex-col md:flex-row justify-between items-center bg-white hover:shadow-lg rounded-xl cursor-pointer transition-shadow duration-200 ${
                   activeCard === index ? "scale-[1.02] shadow-2xl" : ""
                 }`}
               >
@@ -241,31 +241,42 @@ export function WhatWeDoSection() {
               </div>
 
               <div className="w-full md:w-1/2 overflow-y-auto p-6 md:p-8 flex flex-col justify-between">
-                <div>
-                  <h3 className="font-bold text-xl md:text-2xl text-[#260433] mb-3">
-                    {serviceDetailsKPO[selectedCard.key]?.title || selectedCard.title}
-                  </h3>
-                  <p className="text-neutral-600 mb-4 text-sm md:text-base leading-relaxed">
-                    {serviceDetailsKPO[selectedCard.key]?.details || selectedCard.description}
-                  </p>
-                  <ul className="text-neutral-600 text-sm md:text-base list-none space-y-3">
-                    {serviceDetailsKPO[selectedCard.key]?.points?.map((p, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <span className="mt-1 text-green-600">✔</span>
-                        <span>{p.content}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="mt-6">
-                  <Button
-                    className="h-10 w-full max-w-[200px] bg-[#260433] hover:bg-fuchsia-950 px-4 py-2 text-sm font-medium sm:w-auto text-white"
-                    radius="full"
-                  >
-                    Contact Us
-                  </Button>
-                </div>
-              </div>
+  <div>
+    {(() => {
+      const serviceDetails =
+        activeTab === "kpo" ? serviceDetailsKPO : serviceDetailsRPO;
+
+      return (
+        <>
+          <h3 className="font-bold text-xl md:text-2xl text-[#260433] mb-3">
+            {serviceDetails[selectedCard.key]?.title || selectedCard.title}
+          </h3>
+          <p className="text-neutral-600 mb-4 text-sm md:text-base leading-relaxed">
+            {serviceDetails[selectedCard.key]?.details || selectedCard.description}
+          </p>
+          <ul className="text-neutral-600 text-sm md:text-base list-none space-y-3">
+            {serviceDetails[selectedCard.key]?.points?.map((p, idx) => (
+              <li key={idx} className="flex items-start gap-2">
+                <span className="mt-1 text-green-600">✔</span>
+                <span>{p.content}</span>
+              </li>
+            ))}
+          </ul>
+        </>
+      );
+    })()}
+  </div>
+
+  <div className="mt-6">
+    <Button
+      className="h-10 w-full max-w-[200px] bg-[#260433] hover:bg-fuchsia-950 px-4 py-2 text-sm font-medium sm:w-auto text-white"
+      radius="full"
+    >
+      Contact Us
+    </Button>
+  </div>
+</div>
+
             </motion.div>
           </div>
         )}

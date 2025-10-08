@@ -6,20 +6,20 @@ export default function AboutPage() {
   return (
     <>
       <Helmet>
-        <title>About Us - Evron Research</title>
+        <title>About Us - Evren Research</title>
         <meta
           name="description"
-          content="Learn more about Evron Research and how we help businesses grow with innovative research solutions."
+          content="Learn more about Evren Research and how we help businesses grow with innovative research solutions."
         />
-        <link rel="canonical" href="https://www.Evronresearch.com/about" />
+        <link rel="canonical" href="https://www.Evrenresearch.com/about" />
         <script type="application/ld+json">
           {`
             {
               "@context": "https://schema.org",
               "@type": "WebPage",
-              "url": "https://www.Evronresearch.com/about",
-              "name": "About Us - Evron Research",
-              "description": "Learn more about Evron Research and how we help businesses grow with innovative research solutions."
+              "url": "https://www.Evrenresearch.com/about",
+              "name": "About Us - Evren Research",
+              "description": "Learn more about Evren Research and how we help businesses grow with innovative research solutions."
             }
           `}
         </script>

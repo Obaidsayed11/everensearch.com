@@ -2,6 +2,8 @@ import React from "react";
 // import largeScreen from "../image/largescreen.png";
 import { NavLink } from "react-router-dom";
 import { BackgroundBeamsWithCollision } from "../components/ui/background-beams-with-collision";
+import logo from "../assets/logo.png"; // For large screens
+import logo2 from "../assets/logo2.png"; // For small and medium screens
 
 const Footer = () => {
   return (
@@ -12,11 +14,21 @@ const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-28 text-white">
           {/* Logo and Description */}
           <div className="flex flex-col">
-            <div className="text-teal-600">
-              {/* <img src={largeScreen} alt="Evron Logo" className="w-40" /> */}
-            </div>
+             <div className=" flex items-center space-x-2 bg-white w-60 rounded-2xl p-2 ">
+            <NavLink to="/" className="font-[Poppins] flex items-center space-x-2">
+              <img
+                src={logo2}
+                alt="Evren Logo"
+                className="h-7 w-auto"
+              />
+              {/* Text only visible on lg+ screens */}
+              <h4 className="text-lg font-semibold text-black tracking-wide">
+                Evren Research
+              </h4>
+            </NavLink>
+          </div>
             <p className="mt-4 text-left text-white">
-              The Ultimate Destination Of Research.
+             The Premier Hub For Cutting-Edge Research.
             </p>
             {/* Social Icons */}
             <ul className="mt-6 flex space-x-2 text-white">
@@ -61,7 +73,7 @@ const Footer = () => {
 
               <li>
                 <a
-                  href="https://www.linkedin.com/company/Evron-research-pvt-ltd/"
+                  href="https://www.linkedin.com/company/Evren-research-pvt-ltd/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -85,7 +97,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://www.instagram.com/Evron.research/?hl=en"
+                  href="https://www.instagram.com/Evren.research/?hl=en"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -259,7 +271,7 @@ const Footer = () => {
         {/* Footer Bottom */}
         <p className="mt-8 text-center text-xs text-white">
           <span>
-            &copy; 2025. Evron Research. All rights reserved.{" "}
+            &copy; 2025. Evren Research. All rights reserved.{" "}
             <NavLink to="/privacy-policy" className="text-fuchsia-700 underline">
               Privacy Policy
             </NavLink>

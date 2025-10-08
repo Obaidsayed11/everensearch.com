@@ -33,7 +33,7 @@ export default function OurTeamSection() {
             Meet Our <span className="text-fuchsia-700">Experts</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto mt-3">
-            Our team at Evron Research is a diverse group of professionals united
+            Our team at Evren Research is a diverse group of professionals united
             by a passion for innovation, precision, and growth.
           </p>
         </div>
@@ -50,7 +50,7 @@ export default function OurTeamSection() {
               Driven by Talent, Passion, and Purpose
             </h3>
             <p className="text-gray-700 text-base leading-relaxed">
-              At Evron Research, every member plays a key role in transforming
+              At Evren Research, every member plays a key role in transforming
               data into impactful insights. Our leadership and experts work
               together to deliver excellence and innovation globally.
             </p>
@@ -65,7 +65,7 @@ export default function OurTeamSection() {
           </motion.div>
 
           {/* Right Cards */}
-          <div className="flex flex-wrap justify-end   gap-8 w-full lg:w-1/2">
+          <div className="flex flex-wrap justify-center gap-8 w-full lg:w-1/2">
             {aboutCards.map((card, i) => (
               <motion.div
                 whileHover={{ y: -6 }}
@@ -100,7 +100,9 @@ export default function OurTeamSection() {
                       <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 20h-3v-10h3v10zm-1.5-11.27c-.97 0-1.75-.79-1.75-1.73s.79-1.73 1.75-1.73c.97 0 1.75.79 1.75 1.73s-.79 1.73-1.75 1.73zm13.5 11.27h-3v-5.5c0-1.34-.02-3.06-1.87-3.06-1.87 0-2.15 1.46-2.15 2.96v5.61h-3v-10h2.88v1.36h.04c.4-.75 1.37-1.54 2.81-1.54 3 0 3.55 1.98 3.55 4.56v5.62z" />
                     </svg>
                   </a>
+                  <a href="tel:+919967810464">
                   <span>{card.number}</span>
+                  </a>
                 </div>
               </motion.div>
             ))}

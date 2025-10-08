@@ -8,6 +8,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
+import {LoaderFive } from './components/ui/loader'
 
 // Lazy load all page components
 const Home = lazy(() => import('./pages/Home/Home'));
@@ -30,7 +31,7 @@ const PageLoader = () => (
     fontSize: '1.2rem',
     color: '#666'
   }}>
-    Loading...
+   <LoaderFive text="Evren Research..." />;
   </div>
 );
 

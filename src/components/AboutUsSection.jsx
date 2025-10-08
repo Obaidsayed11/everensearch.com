@@ -60,7 +60,7 @@ const AboutUsSection = () => {
               </h2>
                             
               <p className="text-gray-600 text-base md:text-lg leading-relaxed">
-                At Evron Research, we empower businesses by offering a blend of
+                At Evren Research, we empower businesses by offering a blend of
                 tailored solutions designed for success. With expertise in talent
                 mapping, executive search, recruitment, and KPO services—including
                 data management and B2B data—we provide the tools and insights

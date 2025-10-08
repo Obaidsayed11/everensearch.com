@@ -63,23 +63,23 @@ const RpoServices = () => {
   return (
     <>
       <Helmet>
-        <title>RPO Services - Evron Research</title>
+        <title>RPO Services - Evren Research</title>
         <meta
           name="description"
-          content="Explore Evron Research's RPO services to streamline your recruitment processes."
+          content="Explore Evren Research's RPO services to streamline your recruitment processes."
         />
         <link
           rel="canonical"
-          href="https://www.Evronresearch.com/rpo-services"
+          href="https://www.Evrenresearch.com/rpo-services"
         />
         <script type="application/ld+json">
           {`
           {
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "url": "https://www.Evronresearch.com/rpo-services",
-            "name": "RPO Services - Evron Research",
-            "description": "Explore Evron Research's RPO services to streamline your recruitment processes."
+            "url": "https://www.Evrenresearch.com/rpo-services",
+            "name": "RPO Services - Evren Research",
+            "description": "Explore Evren Research's RPO services to streamline your recruitment processes."
           }
           `}
         </script>
@@ -115,7 +115,7 @@ const RpoServices = () => {
                   } p-8`}
                 >
                   <active.icon
-                    className="w-28 h-28 md:w-36 md:h-36 text-fuchsia-800"
+                    className="w-28 h-28 md:w-36 md:h-36"
                     strokeWidth={1.5}
                   />
                 </div>

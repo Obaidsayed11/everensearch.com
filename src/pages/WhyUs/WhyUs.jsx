@@ -87,19 +87,19 @@ function WhyUs() {
     {
       title: "A Legacy of Excellence",
       description:
-        "Evron Research is known for continuously setting the benchmark in RPO and KPO services, not just meeting but consistently exceeding industry standards.",
+        "Evren Research is known for continuously setting the benchmark in RPO and KPO services, not just meeting but consistently exceeding industry standards.",
     },
   ];
 
   return (
     <>
       <Helmet>
-        <title>Why Choose Us - Evron Research</title>
+        <title>Why Choose Us - Evren Research</title>
         <meta
           name="description"
-          content="Learn why Evron Research is the best choice for your business research and data analytics needs."
+          content="Learn why Evren Research is the best choice for your business research and data analytics needs."
         />
-        <link rel="canonical" href="https://www.Evronresearch.com/why-us" />
+        <link rel="canonical" href="https://www.Evrenresearch.com/why-us" />
       </Helmet>
 
       <section className="relative  px-6 md:px-12 py-16 md:py-24">
@@ -110,7 +110,7 @@ function WhyUs() {
               Our Strategic Approach
             </h1>
             <p className="text-gray-700 leading-relaxed mb-10">
-              At Evron Research, our strategic approach is designed to deliver tailored,
+              At Evren Research, our strategic approach is designed to deliver tailored,
               high-performance solutions that meet the unique needs of each client. We focus
               on blending industry-leading expertise, innovative methodologies, and cutting-edge
               technology to drive superior outcomes in RPO and KPO services.
