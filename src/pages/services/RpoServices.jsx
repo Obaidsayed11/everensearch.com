@@ -85,7 +85,7 @@ const RpoServices = () => {
         </script>
       </Helmet>
 
-      <div className="bg-gray-50 bg-opacity-75">
+      <div className="bg-gray-100 bg-opacity-75">
         <RpoServicesHeading />
 
         {/* Expanded Modal */}
@@ -115,7 +115,7 @@ const RpoServices = () => {
                   } p-8`}
                 >
                   <active.icon
-                    className="w-28 h-28 md:w-36 md:h-36 text-white"
+                    className="w-28 h-28 md:w-36 md:h-36 text-fuchsia-800"
                     strokeWidth={1.5}
                   />
                 </div>
@@ -123,7 +123,7 @@ const RpoServices = () => {
                 {/* Right section - Content */}
                 <div className="w-full md:w-1/2 overflow-y-auto p-6 md:p-8 flex flex-col justify-between">
                   <div>
-                    <h3 className="font-bold text-xl md:text-2xl text-neutral-800 dark:text-neutral-200 mb-3 md:mb-4">
+                    <h3 className="font-bold text-xl md:text-2xl text-[#260433] dark:text-neutral-200 mb-3 md:mb-4">
                       {serviceDetailsRPO[active.key]?.title || active.title}
                     </h3>
                     <p className="text-neutral-600 dark:text-neutral-400 mb-4 md:mb-6 text-sm md:text-base leading-relaxed">
@@ -157,7 +157,7 @@ const RpoServices = () => {
 
         {/* Cards Grid */}
         <div
-          className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-4 px-4 mb-10"
+          className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-4 px-4 pb-10"
           data-aos="fade-down"
           data-aos-duration="1300"
         >

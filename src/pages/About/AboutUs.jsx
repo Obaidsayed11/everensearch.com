@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet";
 import AboutUsSection from "./AboutUsSection";
-import GlobeSection from "./GlobeSection";
 import OurTeamSection from "./OurTeamSection";
 
 export default function AboutPage() {
@@ -27,7 +26,6 @@ export default function AboutPage() {
       </Helmet>
 
       <AboutUsSection />
-      {/* <GlobeSection /> */}
       <OurTeamSection />
     </>
   );
