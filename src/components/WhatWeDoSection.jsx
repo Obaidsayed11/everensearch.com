@@ -1,65 +1,38 @@
-import { WhatWeDoHeader } from "./AllHeader";
-import { ServiceCard } from "../pages/services/Card";
-import { KPOSERVICES, RPOSERVICES } from "../lib/utils";
-import { NavLink } from "react-router-dom";
-import { Plus } from "lucide-react";
+"use client";
 import { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { WhatWeDoHeader } from "./AllHeader";
+import { Button } from "@nextui-org/react";
+import { Plus } from "lucide-react";
+import { NavLink } from "react-router-dom";
+import { KPOSERVICES, RPOSERVICES } from "../lib/utils";
+import { serviceDetailsKPO } from "../lib/utils2";
 
-const KpoCards = [
-  "email-list",
-  "data-append",
-  "data-refresh",
-  "customize-b2b",
-  "database-building",
-  "content-research",
-  "linkedin-data",
-  "lead-generation",
-];
+const colorMap = {
+  purple1: "text-fuchsia-800 bg-purple-200",
+  purple2: "text-purple-200 bg-fuchsia-800",
+};
 
-const RpoCards = [
-  "number-gathering",
-  "talent-mapping",
-  "talent-sourcing",
-  "talent-insight",
-  "executive-search-support",
-  "recruitment-services",
-];
+const CloseIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    strokeWidth="2"
+    stroke="currentColor"
+    className="h-5 w-5 text-black dark:text-white"
+  >
+    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+  </svg>
+);
 
 export function WhatWeDoSection() {
   const [activeTab, setActiveTab] = useState("kpo");
   const [activeCard, setActiveCard] = useState(0);
+  const [selectedCard, setSelectedCard] = useState(null);
   const cardsRef = useRef([]);
   const rightPanelRef = useRef(null);
 
-
-useEffect(() => {
-  const container = rightPanelRef.current;
-  if (!container) return;
-
-  const handleScroll = () => {
-    const containerTop = container.getBoundingClientRect().top;
-
-    let newActive = 0;
-
-    cardsRef.current.forEach((card, index) => {
-      if (!card) return;
-      const rect = card.getBoundingClientRect();
-      if (rect.top - containerTop + rect.height / 2 > 0) {
-        newActive = index;
-        return;
-      }
-    });
-
-    setActiveCard(newActive);
-  };
-
-  container.addEventListener("scroll", handleScroll);
-  handleScroll(); // initialize
-  return () => container.removeEventListener("scroll", handleScroll);
-}, [activeTab]);
-
-
-  // Track scroll inside right panel only
   useEffect(() => {
     const container = rightPanelRef.current;
     if (!container) return;
@@ -67,19 +40,16 @@ useEffect(() => {
     const handleScroll = () => {
       const scrollTop = container.scrollTop;
       const containerHeight = container.clientHeight;
-
       cardsRef.current.forEach((card, index) => {
         if (!card) return;
         const offsetTop = card.offsetTop;
         const offsetHeight = card.offsetHeight;
         const cardMiddle = offsetTop + offsetHeight / 2;
-
         if (cardMiddle >= scrollTop && cardMiddle <= scrollTop + containerHeight) {
           setActiveCard(index);
         }
       });
     };
-
     container.addEventListener("scroll", handleScroll);
     return () => container.removeEventListener("scroll", handleScroll);
   }, [activeTab]);
@@ -111,15 +81,13 @@ useEffect(() => {
   };
 
   const activeContent = activeTab === "kpo" ? kpoContent : rpoContent;
-  const activeServices = activeTab === "kpo" ? KPOSERVICES : RPOSERVICES;
-  const activeCards = activeTab === "kpo" ? KpoCards : RpoCards;
+  const activeServices = activeTab === "kpo" ? KPOSERVICES.slice(0, 5) : RPOSERVICES.slice(0, 5);
 
   return (
     <div className="container relative mx-auto px-4 pb-16 overflow-x-hidden">
-    <div className="w-full text-center">
-      <WhatWeDoHeader />
-    
-    </div>
+      <div className="w-full text-center">
+        <WhatWeDoHeader />
+      </div>
 
       {/* Tabs */}
       <div className="sticky top-0 z-30 bg-white/80 backdrop-blur-md py-6 mb-12">
@@ -153,24 +121,21 @@ useEffect(() => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-        {/* Left Sticky Content */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8">
+        {/* LEFT FIXED PANEL */}
         <div className="lg:sticky lg:top-32 lg:self-start">
-          {/*  <div className="space-y-6 p-8 rounded-3xl bg-purple-100 border shadow-lg  border-purple-100 min-h-[600px] flex flex-col justify-center"> */}
-
-          {/*  <div className="space-y-6 p-8 rounded-3xl bg-purple-100 border border-purple-100 min-h-[600px] flex flex-col justify-center shadow-[0_0_25px_rgba(147,51,234,0.3)]">
-            */}
-
-            <div className="space-y-6 p-8 rounded-3xl bg-purple-100 border border-purple-100 min-h-[600px] flex flex-col justify-center shadow-[0_4px_20px_rgba(147,51,234,0.15),0_0_10px_rgba(147,51,234,0.1)]">
-
+          <div className="space-y-6 p-8 rounded-3xl bg-purple-100 border border-purple-100 min-h-[600px] flex flex-col justify-center shadow-[0_4px_20px_rgba(147,51,234,0.15)]">
             <span className="bg-[#260433] w-fit text-white px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
               {activeContent.subtitle}
             </span>
 
-            <h2 className={`text-4xl lg:text-5xl font-bold  bg-clip-text text-transparent ${
-              activeTab === "kpo" ? "bg-[linear-gradient(to_right,_#093028,_#6CC686)]" : "bg-[linear-gradient(to_right,_#3e4044,_#2d78f1)]"
+            <h2
+              className={`text-4xl lg:text-5xl font-bold bg-clip-text text-transparent ${
+                activeTab === "kpo"
+                  ? "bg-[linear-gradient(to_right,_#093028,_#6CC686)]"
+                  : "bg-[linear-gradient(to_right,_#3e4044,_#2d78f1)]"
               }`}
-              >
+            >
               {activeContent.title}
             </h2>
 
@@ -186,7 +151,9 @@ useEffect(() => {
                 <div
                   key={index}
                   className={`flex items-center gap-3 transition-all duration-500 ${
-                    activeCard === index ? "opacity-100 translate-x-0" : "opacity-60 -translate-x-2"
+                    activeCard === index
+                      ? "opacity-100 translate-x-0"
+                      : "opacity-60 -translate-x-2"
                   }`}
                 >
                   <div className="w-2 h-2 rounded-full bg-fuchsia-800"></div>
@@ -194,53 +161,48 @@ useEffect(() => {
                 </div>
               ))}
             </div>
-
-            <div className="pt-6">
-              <div className="text-xs text-gray-700 mb-2">Scroll to explore services →</div>
-              <div className="flex gap-2">
-                {activeCards.map((_, index) => (
-                  <div
-                    key={index}
-                    className={`h-1.5 rounded-full transition-all duration-300 ${
-                      index === activeCard
-                        ? "w-8 bg-fuchsia-800"
-                        : "w-1.5 bg-gray-300"
-                    }`}
-                  ></div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
 
-        {/* Right Scrollable Cards */}
+        {/* RIGHT PANEL - Expandable Cards */}
         <div
-  ref={rightPanelRef}
-  className="space-y-6 max-h-[600px] overflow-y-auto pr-2 rounded-2xl scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent hover:scrollbar-thumb-gray-400 transition-all duration-300"
->
-  {activeServices
-    .filter(service => activeCards.includes(service.key))
-    .map((service, index) => (
-      <div
-        key={service.key}
-        ref={(el) => (cardsRef.current[index] = el)}
-        className="scroll-item"
-      >
-        <ServiceCard
-          icon={service.icon}
-          title={service.title}
-          description={service.description}
-          detailPath={service.detailPath}
-          color={service.color}
-          className={`transform transition-all duration-500 ${
-            activeCard === index
-              ? "scale-105 shadow-2xl"
-              : "scale-100 hover:scale-105"
-          }`}
-        />
-      </div>
-    ))}
-
+          ref={rightPanelRef}
+          className="space-y-6 max-h-[600px] overflow-y-auto pr-2 rounded-2xl scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent hover:scrollbar-thumb-gray-400 "
+        >
+          {activeServices.map((card, index) => {
+            const Icon = card.icon;
+            return (
+              <motion.div
+                key={card.key}
+                ref={(el) => (cardsRef.current[index] = el)}
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.2 }}
+                className={`p-6 m-4 flex flex-col md:flex-row justify-between items-center bg-white hover:shadow-lg rounded-xl cursor-pointer transition-shadow duration-200  ${
+                  activeCard === index ? "scale-[1.02] shadow-2xl" : ""
+                }`}
+              >
+                <div className="flex gap-4 flex-col md:flex-row items-center md:items-start w-full">
+                  <div
+                    className={`h-16 w-16 rounded-lg flex items-center justify-center ${colorMap[card.color]} flex-shrink-0`}
+                  >
+                    <Icon className="w-8 h-8" strokeWidth={1.5} />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-base text-neutral-800 mb-1">
+                      {card.title}
+                    </h3>
+                    <p className="text-neutral-600 text-sm">{card.description}</p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setSelectedCard(card)}
+                  className="px-5 py-2 text-sm rounded-full font-semibold bg-gray-100 hover:bg-fuchsia-800 hover:text-purple-200 text-neutral-700 mt-4 md:mt-0 transition-colors duration-200"
+                >
+                  View
+                </button>
+              </motion.div>
+            );
+          })}
 
           <div className="flex justify-center pt-8 pb-8">
             <NavLink to={activeTab === "kpo" ? "/kpo-services" : "/rpo-services"}>
@@ -253,6 +215,61 @@ useEffect(() => {
           </div>
         </div>
       </div>
+
+      {/* Expanded Card Modal */}
+      <AnimatePresence mode="wait">
+        {selectedCard && (
+          <div className="fixed inset-0 grid place-items-center z-[100] p-4 bg-black/30 backdrop-blur-sm">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+              className="relative w-full max-w-4xl max-h-[90vh] flex flex-col md:flex-row bg-white rounded-2xl overflow-hidden shadow-2xl"
+            >
+              <button
+                className="absolute top-3 right-3 flex items-center justify-center bg-gray-100 rounded-full h-9 w-9 shadow-md hover:bg-gray-200 transition-colors z-20"
+                onClick={() => setSelectedCard(null)}
+              >
+                <CloseIcon />
+              </button>
+
+              <div
+                className={`w-full md:w-1/2 flex items-center justify-center bg-gradient-to-br ${colorMap[selectedCard.color]} p-8`}
+              >
+                <selectedCard.icon className="w-28 h-28 md:w-36 md:h-36 text-fuchsia-800" />
+              </div>
+
+              <div className="w-full md:w-1/2 overflow-y-auto p-6 md:p-8 flex flex-col justify-between">
+                <div>
+                  <h3 className="font-bold text-xl md:text-2xl text-[#260433] mb-3">
+                    {serviceDetailsKPO[selectedCard.key]?.title || selectedCard.title}
+                  </h3>
+                  <p className="text-neutral-600 mb-4 text-sm md:text-base leading-relaxed">
+                    {serviceDetailsKPO[selectedCard.key]?.details || selectedCard.description}
+                  </p>
+                  <ul className="text-neutral-600 text-sm md:text-base list-none space-y-3">
+                    {serviceDetailsKPO[selectedCard.key]?.points?.map((p, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <span className="mt-1 text-green-600">✔</span>
+                        <span>{p.content}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="mt-6">
+                  <Button
+                    className="h-10 w-full max-w-[200px] bg-[#260433] hover:bg-fuchsia-950 px-4 py-2 text-sm font-medium sm:w-auto text-white"
+                    radius="full"
+                  >
+                    Contact Us
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
