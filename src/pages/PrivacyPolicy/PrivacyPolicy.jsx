@@ -194,11 +194,7 @@ const PrivacyPolicy = () => {
         <h2 className="text-xl font-semibold mb-4 text-[#260433]">For permissions or further inquiries, contact:</h2>
         <p className="text-base text-gray-700">
         aslan@evrenresearch.com <br />
-        85, Sector 1, Millenium Business Park,
-
-MIDC Industrial Area, Kopar Khairane, Navi Mumbai
-
-Maharashtra 400710.
+        
         </p>
         </section>
       </div>

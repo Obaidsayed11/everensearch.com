@@ -16,7 +16,7 @@ const App = () => {
     });
   }, []);
   return (
-    <div className="h-screen w-full">
+      <div className="relative min-h-screen m-0 p-0">
     <ScrollToTop />
       <Header />
       <Outlet />
